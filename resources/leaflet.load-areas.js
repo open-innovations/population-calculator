@@ -1,7 +1,7 @@
 /*	Area search
 	This uses:
-		* OSM areas
-		* ONS geographies: area_meta.db and area_full.db
+		* OSM areas: osm_meta.db and osm_full.db
+		* ONS geographies: bits_meta.db and bits_full.db
 */
 L.Control.loadArea = L.Control.extend({        
 	options: {
@@ -79,7 +79,7 @@ L.Control.loadArea = L.Control.extend({
 						'code':code,
 						'url':'https://open-innovations.github.io/geography-bits/data/'+code+'.geojsonl',
 						'type':type||"",
-						'display':''+name+(type ? ' ('+type+(year ? " 20"+year:"")+')' : '')+'<span class="source ONS">ONS</span>'
+						'display':''+name+(type ? ' ('+type+(year ? " 20"+year:"")+')' : '')+'<span class="source ONS">UK: ONS</span>'
 					};
 				}else{
 					return {};
@@ -91,17 +91,15 @@ L.Control.loadArea = L.Control.extend({
 			'full':'areas/osm_full.db',
 			'processRow': function(cols){
 				var code,name,type,dir,pop,lvl;
-				/*
-				Columns are:
-					0: name (e.g. Leeds)
-					1: qualifier (e.g. City and Borough of Leeds, England)
-					2: code (e.g. 118362)
-					3: level (e.g. 8)
-					4: population (e.g. 455123)
-					5: latitude
-					6: longitude
-				e.g. Leeds	City and Borough of Leeds, England	118362	8	455123	53.79648	-1.54785
-				*/
+				// Columns are:
+				//	0: name (e.g. Leeds)
+				//	1: qualifier (e.g. City and Borough of Leeds, England)
+				//	2: code (e.g. 118362)
+				//	3: level (e.g. 8)
+				//	4: population (e.g. 455123)
+				//	5: latitude
+				//	6: longitude
+				// e.g. Leeds	City and Borough of Leeds, England	118362	8	455123	53.79648	-1.54785
 				if(cols.length==7){
 					dir = Math.floor(parseInt(cols[2])/1e5)*100000;
 					name = cols[0]+(cols[1] ? ", "+cols[1] : "");
@@ -210,7 +208,13 @@ L.control.loadarea = function(opts){ return new L.Control.loadArea(opts); };
 					fetch(url,{"headers": headers})
 					.then(response => { return response.text(); })
 					.then(txt => {
-						if(typeof opts.start==="number" && typeof opts.end==="number" && txt.length!=(opts.end-opts.start+1)) throw new Error('Wrong length returned.');
+						var elength = opts.end-opts.start;
+						var ok = false;
+						if(txt.length >= elength-1 && txt.length <= elength+1) ok = true;
+						if(typeof opts.start==="number" && typeof opts.end==="number" && !ok){
+							console.error('Getting '+url+' expected length is '+elength+' but got '+txt.length,ok);
+							throw new Error('Wrong length returned.');
+						}
 						cb.call(this,txt,{'url':url});
 					})
 					.catch(error => {
