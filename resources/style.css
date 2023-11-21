@@ -225,7 +225,7 @@ button { height: 2em; margin-top: 0; line-height: 1em; border-radius: 4px; }
 .leaflet-control-circle form .value { padding-right:0.125em; }
 
 .leaflet-container.crosshair-cursor-enabled { cursor:crosshair; }
-
+.leaflet-control-attribution { font-size: 0.8em; }
 .area-select-marker, .area-select-ghost-marker { border-radius: 100%; }
 
 footer ul, footer ol { list-style: disc; margin-bottom: 1em; }

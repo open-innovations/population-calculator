@@ -6,91 +6,103 @@ L.Control.circle = L.Control.extend({
 		position: 'topleft',
 		circle: false
 	},
+	activate: function(){
+		this._container.classList.add('open');
+		this._inp.style.display = 'block';
+		this._inp.focus();
+		this._val.style.display = 'block';
+		this._ctl.style.display = 'block';
+		L.DomUtil.addClass(this._map._container,'crosshair-cursor-enabled');
+		this._active = true;
+		this.fire('activate');
+	},
+	deactivate: function(){
+		this._container.classList.remove('open');
+		this._circle.removeFrom(this._map);
+		this.options.circle = false;
+		this._inp.style.display = '';
+		this._btn.focus();
+		this._inp.value = "";
+		this._val.style.display = 'none';
+		this._ctl.style.display = 'none';
+		L.DomUtil.removeClass(this._map._container,'crosshair-cursor-enabled');
+		this.options.circle = false;
+		this._active = false;
+		this.fire('deactivate');
+	},
+	setCirclePosition: function(e){
+		if(this._active){
+			if(!this.options.circle){
+				this._circle.addTo(this._map);
+				this.options.circle = true;
+			}
+			this.options.centre = e.latlng;
+			this._circle.setLatLng(this.options.centre);
+			this._map.fitBounds(this._circle.getBounds());
+			this.fire('update',this);
+		}
+	},
 	onAdd: function(map){
 
 		var _obj = this;
+		var CLICK_EVT = leaflet.Browser.mobile ? 'touchend' : 'click';
+		this._map = map;
 
-		function trigger(el, eventType) {
-			if(typeof eventType === 'string' && typeof el[eventType] === 'function') {
-				el[eventType]();
-			}else{
-				const event = eventType === 'string' ? new Event(eventType, {bubbles: true}) : eventType;
-				el.dispatchEvent(event);
-			}
-		}
-		function setState(state){
-			if(typeof state!=="boolean") state = !container.classList.contains('open'); 
-			if(state){
-				container.classList.add('open');
-				inp.style.display = 'block';
-				inp.focus();
-				val.style.display = 'block';
-				ctl.style.display = 'block';
-				map.on('click', setCirclePosition);
-				L.DomUtil.addClass(map._container,'crosshair-cursor-enabled');
-			}else{
-				container.classList.remove('open');
-				circle.removeFrom(map);
-				_obj.options.circle = false;
-				inp.style.display = '';
-				btn.focus();
-				inp.value = "";
-				val.style.display = 'none';
-				ctl.style.display = 'none';
-				map.off('click', setCirclePosition);
-				L.DomUtil.removeClass(map._container,'crosshair-cursor-enabled');
-				_obj.options.circle = false;
-			}
-		}
 		function updateValue(v){
 			if(v.target) v = v.target.value;
-			val.querySelector('span').innerHTML = v;
+			_obj._val.querySelector('span').innerHTML = v;
 
 			_obj.options.radius = parseFloat(v);
 
-			circle.setRadius(1000*_obj.options.radius);
+			_obj._circle.setRadius(1000*_obj.options.radius);
+			_obj.fire('update',_obj);
 		}
-		function setCirclePosition(e) {
+		this._setCirclePosition = function(e){
+			console.log('_setCirclePosition',this,e);
+		};
+		function setCirclePosition(e){ _obj.setCirclePosition(e); }
 
-			_obj.options.centre = e.latlng;
-
-			if(!_obj.options.circle){
-				circle.addTo(map);
-				_obj.options.circle = true;
-			}
-			circle.setLatLng(_obj.options.centre);
-			map.fitBounds(circle.getBounds());
-		}
-
-		var container = L.DomUtil.create('div', 'leaflet-control leaflet-control-circle');
-		container.innerHTML = '<div class="leaflet-bar"><form><button class="leaflet-button"><svg xmlns="http://www.w3.org/2000/svg" overflow="visible" width="16" height="16" fill="currentColor" fill-opacity="0.4" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7"></circle></svg></button><div class="control" style="display:none;"><input class="radius" id="radius" name="radius" value="'+(this.options.value||1)+'" type="range" min="1" max="100" /></div><div class="value" style="display:none;"><span></span>km</div></div></form></div>';
-		var btn = container.querySelector('button');
-		var inp = container.querySelector('input');
-		var ctl = container.querySelector('.control');
-		var val = container.querySelector('.value');
-		var circle = L.circle([0,0],{'radius':1000});
+		this._container = L.DomUtil.create('div', 'leaflet-control leaflet-control-circle');
+		this._container.innerHTML = '<div class="leaflet-bar"><form><button class="leaflet-button"><svg xmlns="http://www.w3.org/2000/svg" overflow="visible" width="16" height="16" fill="currentColor" fill-opacity="0.4" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7"></circle></svg></button><div class="control" style="display:none;"><input class="radius" id="radius" name="radius" value="'+(this.options.value||1)+'" type="range" min="1" max="100" /></div><div class="value" style="display:none;"><span></span>km</div></div></form></div>';
+		this._btn = this._container.querySelector('button');
+		this._inp = this._container.querySelector('input');
+		this._ctl = this._container.querySelector('.control');
+		this._val = this._container.querySelector('.value');
+		this._circle = L.circle([0,0],{'radius':1000});
+		this._active = false;
 		
 		// Stop map dragging on the element
-		inp.addEventListener('mousedown', function(){ map.dragging.disable(); });
-		inp.addEventListener('mouseup', function(){ map.dragging.enable(); });
-		inp.addEventListener('input',updateValue);
+		this._inp.addEventListener('mousedown', function(){ map.dragging.disable(); });
+		this._inp.addEventListener('mouseup', function(){ map.dragging.enable(); });
+		this._inp.addEventListener('input',updateValue);
 		updateValue(1);
 
-		btn.addEventListener('click',function(event){
+		this._btn.addEventListener(CLICK_EVT,function(event){
 			event.preventDefault();
 			event.stopPropagation();
-			setState();
+			state = !_obj._container.classList.contains('open');
+			if(state){
+				_obj._map.on(CLICK_EVT, setCirclePosition);
+				_obj.activate();
+			}else{
+				_obj._map.off(CLICK_EVT, setCirclePosition);
+				_obj.deactivate();
+			}
 		});
-		btn.addEventListener('dblclick', function(event){
+		this._btn.addEventListener('dblclick', function(event){
 			event.preventDefault();
 			event.stopPropagation();
 		});
-		container.addEventListener('click', function(event){
+		this._container.addEventListener(CLICK_EVT, function(event){
 			event.preventDefault();
 			event.stopPropagation();
 		});
 
-		return container;
+		return this._container;
 	}
 });
+
+// Add ability to listen to events
+L.extend(L.Control.circle.prototype, L.Evented.prototype);
+
 L.control.circle = function(opts){ return new L.Control.circle(opts); };

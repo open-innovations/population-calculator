@@ -478,19 +478,24 @@ console.log('Not getting '+file);
 			document.getElementById('map').innerHTML = "";
 			// Set up map
 			this.map = L.map('map').setView([0, 0], 2);
+
 			this.map.createPane('labels');
 			this.map.getPane('labels').style.zIndex = 650;
 			this.map.getPane('labels').style.pointerEvents = 'none';
 			// Add tile layers
-			L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
+			L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png', {
 				attribution: '',
 				pane: 'labels'
 			}).addTo(this.map);
-			L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_nolabels/{z}/{x}/{y}.png', {
+			L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+				attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+			}).addTo(this.map);
+			/*
+			L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
 				attribution: 'Tiles: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
 				subdomains: 'abcd',
 				maxZoom: 19
-			}).addTo(this.map);
+			}).addTo(this.map);*/
 
 
 			// Add circle drawer
@@ -498,6 +503,16 @@ console.log('Not getting '+file);
 				'position': 'topleft'
 			});
 			this.circleControl.addTo(this.map);
+			this.circleControl.on('update',function(e){
+				console.log('update',e.options.circle,_obj.areaSelection.polygon);
+				if(e.options.circle){
+					// Remove any existing polygons
+					if(_obj.areaSelection.polygon) _obj.areaSelection.deactivate();
+				}
+			}).on('activate',function(e){
+				// Remove any existing polygons
+				if(_obj.areaSelection.polygon) _obj.areaSelection.deactivate();
+			});
 
 
 			// Add area selection
@@ -508,20 +523,27 @@ console.log('Not getting '+file);
 				},
 				'onPolygonDblClick':function(a){
 					_obj.logger.log('INFO','onPolygonDblClick',a);
+				},
+				'onButtonActivate':function(e){
+					_obj.circleControl.deactivate();
 				}
 			});
 			this.map.addControl(this.areaSelection);
 
 
 			// Add control for loading areas
-			L.control.loadarea({
+			this.loadarea = L.control.loadarea({
 				'position': 'topleft',
 				'process': function(d){
 					if(d.url){
 						_obj.loadArea(d.url);
 					}
 				}
-			}).addTo(this.map);
+			});
+			this.loadarea.on('activate',function(e){
+				_obj.circleControl.deactivate();
+			})
+			this.loadarea.addTo(this.map);
 			
 
 			if(location.search.indexOf('area=')>0){

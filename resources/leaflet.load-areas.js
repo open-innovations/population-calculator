@@ -10,6 +10,7 @@ L.Control.loadArea = L.Control.extend({
 
 	onAdd: function(map){
 
+		var _obj = this;
 		function trigger(el, eventType) {
 			if(typeof eventType === 'string' && typeof el[eventType] === 'function') {
 				el[eventType]();
@@ -24,11 +25,13 @@ L.Control.loadArea = L.Control.extend({
 				container.classList.add('open');
 				inp.style.display = 'block';
 				inp.focus();
+				_obj.fire('activate');
 			}else{
 				container.classList.remove('open');
 				inp.style.display = '';
 				btn.focus();
 				inp.value = "";
+				_obj.fire('dectivate');
 			}			
 		}
 
@@ -169,6 +172,10 @@ L.Control.loadArea = L.Control.extend({
 		return container;
 	}
 });
+
+// Add ability to listen to events
+L.extend(L.Control.loadArea.prototype, L.Evented.prototype)
+
 L.control.loadarea = function(opts){ return new L.Control.loadArea(opts); };
 (function(root){
 	var OI = root.OI || {};
