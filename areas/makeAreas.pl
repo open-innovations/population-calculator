@@ -7,9 +7,10 @@ BEGIN {
 	if(!$basedir){ $basedir = "./"; }
 	$lib = $basedir."";
 }
-use Data::Dumper;
-use Encode 'encode';
 use utf8;
+use Data::Dumper;
+binmode STDOUT, 'utf8';
+binmode STDERR, 'utf8';
 
 $datadir = $ARGV[0]||$basedir."../../geography-bits/data/";
 $chunksize = $ARGV[1]||10000;
@@ -86,11 +87,12 @@ $s = 0;
 $e = 0;
 $meta = "";
 
-for($i = 0; $i < @fulllist; $i++){
 
-	$s = length(encode('UTF-8',$txt));
+for($i = 0; $i < @fulllist; $i++){
+	$s = length($txt);
 	$txt .= "$fulllist[$i]->{'name'}\t$fulllist[$i]->{'code'}\n";
-	$s2 = length(encode('UTF-8',$txt));
+	$s2 = length($txt);
+	print "$fulllist[$i]->{'name'} = $s\n";
 	if(!$prev){ $prev = $fulllist[$i]->{'frag'}; }
 	if($s > $e+$chunksize && $fulllist[$i]->{'frag'} ne $prev){
 		$meta .= "$prev\t$fulllist[$i]->{'frag'}\t$e\t".($s2-1)."\n";
@@ -99,10 +101,10 @@ for($i = 0; $i < @fulllist; $i++){
 	}
 }
 
-open(FILE,">:utf8",$basedir."bits_full.db");
+open(FILE,">",$basedir."bits_full.db");
 print FILE $txt;
 close(FILE);
 
-open(FILE,">:utf8",$basedir."bits_meta.db");
+open(FILE,">",$basedir."bits_meta.db");
 print FILE $meta;
 close(FILE);
