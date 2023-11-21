@@ -12,31 +12,38 @@
 			else document.addEventListener('DOMContentLoaded', fn);
 		};
 	}
+	if(!root.OI.logger){
+		// Version 1.2
+		root.OI.logger = function(title){
+			this.title = title||"OI Logger";
+			this.logging = (location.search.indexOf('debug=true') >= 0);
+			this.log = function(){
+				var a,ext;
+				if(this.logging || arguments[0]=="ERROR" || arguments[0]=="WARNING"){
+					a = Array.prototype.slice.call(arguments, 0);
+					// Build basic result
+					ext = ['%c'+this.title+'%c: '+a[1],'font-weight:bold;',''];
+					// If there are extra parameters passed we add them
+					if(a.length > 2) ext = ext.concat(a.splice(2));
+					if(console && typeof console.log==="function"){
+						if(arguments[0] == "ERROR") console.error.apply(null,ext);
+						else if(arguments[0] == "WARNING") console.warn.apply(null,ext);
+						else if(arguments[0] == "INFO") console.info.apply(null,ext);
+						else console.log.apply(null,ext);
+					}
+				}
+				return this;
+			};
+			return this;
+		};
+	}
 
 	function Application(){
 
 		if(!this.logSetup) this.logSetup = { 'el': document.getElementById('message') };
 		this.title = "Population Calculator";
 		this.version = "2.0";
-		this.logging = (location.search.indexOf('debug=true') >= 0);
-		this.log = function(){
-			var a,ext;
-			// Version 1.1.1
-			if(this.logging || arguments[0]=="ERROR" || arguments[0]=="WARNING"){
-				a = Array.prototype.slice.call(arguments, 0);
-				// Build basic result
-				ext = ['%c'+this.title+' '+this.version+'%c: '+a[1],'font-weight:bold;',''];
-				// If there are extra parameters passed we add them
-				if(a.length > 2) ext = ext.concat(a.splice(2));
-				if(console && typeof console.log==="function"){
-					if(arguments[0] == "ERROR") console.error.apply(null,ext);
-					else if(arguments[0] == "WARNING") console.warn.apply(null,ext);
-					else if(arguments[0] == "INFO") console.info.apply(null,ext);
-					else console.log.apply(null,ext);
-				}
-			}
-			return this;
-		};
+		this.logger = new OI.logger(this.title+' '+this.version);
 		this.message = function(msg,attr){
 			if(!attr) attr = {};
 			if(!attr.type) attr.type = 'message';
@@ -46,7 +53,7 @@
 			if(typeof txt==="string"){
 				txt = txt.replace(/<[^>]+>/g,'');
 			}
-			if(txt) this.log(attr.type,txt,attr.extra||'');
+			if(txt) this.logger.log(attr.type,txt,attr.extra||'');
 
 			var css = "b5-bg";
 			if(attr.type=="ERROR") css = "c12-bg";
@@ -62,7 +69,7 @@
 
 			return this;
 		};
-		this.log('INFO','Initialising');
+		this.logger.log('INFO','Initialising');
 
 		var type = "parking";
 
@@ -255,28 +262,25 @@
 		dropZone.addEventListener('dragout', dragOff, false);
 		dropZone.addEventListener('drop', dropHandler, false);
 
-		function simplifyFeature(feature,max){
+		this.simplifyFeature = function(feature,tolerance){
 			var i,points;
-			if(typeof max!=="number") max = 500;
-			console.log('simplifyFeature',simplify,feature)//simplify(points, tolerance, highQuality)
 			if(feature.geometry.type === "MultiPolygon"){
 				feature.geometry.type = "Polygon";
 				feature.geometry.coordinates[0] = feature.geometry.coordinates[0][0];
 			}
-			// If there are more than 500 points we simplify the polygon
-			if(feature.geometry.coordinates[0].length > max){
+			if(feature.geometry.coordinates[0].length > 300){
 				// Build the points
 				points = new Array(feature.geometry.coordinates[0].length);
 				for(i = 0; i < feature.geometry.coordinates[0].length; i++){
 					points[i] = {'x':feature.geometry.coordinates[0][i][0],'y':feature.geometry.coordinates[0][i][1]};
 				}
-				points = simplify(points, 0.002, true);
+				points = simplify(points, tolerance, true);
+				_obj.logger.log('INFO','Simplified feature from %c'+feature.geometry.coordinates[0].length+'%c to %c'+points.length+'%c points.','font-weight:bold','','font-weight:bold','');
 				feature.geometry.coordinates[0] = new Array(points.length);
 				for(i = 0; i < points.length; i++){
 					feature.geometry.coordinates[0][i] = [points[i].x,points[i].y];
 				}
 			}
-			
 			return feature;
 		}
 
@@ -291,10 +295,8 @@
 				geojson = {"type":"FeatureCollection","features":features};
 			}
 
-			// Take the first feature
-			feature = geojson.features[0];
-			
-			feature = simplifyFeature(feature,400);
+			// Take the first feature and simplify it
+			feature = this.simplifyFeature(geojson.features[0],0.002);
 
 			coord = feature.geometry.coordinates[0];		
 
@@ -324,13 +326,13 @@
 		};
 
 		this.calculate = function(){
-			this.log('INFO','calculate',this.areaSelection.polygon);
-			if(this.areaSelection.polygon){
+			this.logger.log('INFO','calculate',this.areaSelection.polygon,this.circleControl.options.circle);
+			if(this.areaSelection.polygon || this.circleControl.options.circle){
 
 			
 				this.message('Loading data... please wait<br /><svg version="1.1" width="64" height="64" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><g transform="matrix(.11601 0 0 .11601 -49.537 -39.959)"><path d="m610.92 896.12m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="-0.83333s" repeatCount="indefinite" /></path><path d="m794.82 577.6m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="-0.6666s" repeatCount="indefinite" /></path><path d="m1162.6 577.6m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="-0.5s" repeatCount="indefinite" /></path><path d="m1346.5 896.12m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="-0.3333s" repeatCount="indefinite" /></path><path d="m1162.6 1214.6m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="-0.1666s" repeatCount="indefinite" /></path><path d="m794.82 1214.6m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="0s" repeatCount="indefinite" /></path></g></svg>',{'type':'INFO'});
 				var file = "./";
-
+console.log('circleControl',this.circleControl.options);
 console.log('Not getting '+file);
 
 				return this;
@@ -370,7 +372,7 @@ console.log('Not getting '+file);
 							feature = {'type':'Feature','properties':{},'geometry':{'type':'Polygon','coordinates':[[]]}};
 							
 							if(ways[i].nodes[0]!=ways[i].nodes[ways[i].nodes.length-1]){
-								this.log('WARNING','Way '+i+' does not have the same start and end',ways[i]);
+								this.logger.log('WARNING','Way '+i+' does not have the same start and end',ways[i]);
 							}else{
 								for(n = 0; n < ways[i].nodes.length; n++){
 									node = 'node-'+ways[i].nodes[n];
@@ -427,7 +429,7 @@ console.log('Not getting '+file);
 										else console.warn('Bad node '+p+' / '+n,nodelookup[node]);
 									}
 									if(cpoly.length < 4){
-										this.log('WARNING','poly (outer) has too few nodes to make a polygon',cpoly);
+										this.logger.log('WARNING','poly (outer) has too few nodes to make a polygon',cpoly);
 									}else{
 										mpoly.push([cpoly]);
 									}
@@ -446,7 +448,7 @@ console.log('Not getting '+file);
 										else console.warn('Bad node '+p+' / '+n,nodelookup[node]);
 									}
 									if(cpoly.length < 4){
-										this.log('WARNING','poly (inner) has too few nodes to make a polygon',cpoly);
+										this.logger.log('WARNING','poly (inner) has too few nodes to make a polygon',cpoly);
 									}else{
 										mpoly[0].push(cpoly);
 									}
@@ -490,16 +492,26 @@ console.log('Not getting '+file);
 				maxZoom: 19
 			}).addTo(this.map);
 
+
+			// Add circle drawer
+			this.circleControl = L.control.circle({
+				'position': 'topleft'
+			});
+			this.circleControl.addTo(this.map);
+
+
+			// Add area selection
 			this.areaSelection = new window.leafletAreaSelection.DrawAreaSelection({
 				'position': 'topleft',
 				'onPolygonReady':function(a){
-					_obj.log('INFO','onPolygonReady',a);
+					_obj.logger.log('INFO','onPolygonReady',a);
 				},
 				'onPolygonDblClick':function(a){
-					_obj.log('INFO','onPolygonDblClick',a);
+					_obj.logger.log('INFO','onPolygonDblClick',a);
 				}
 			});
 			this.map.addControl(this.areaSelection);
+
 
 			// Add control for loading areas
 			L.control.loadarea({
@@ -511,6 +523,7 @@ console.log('Not getting '+file);
 				}
 			}).addTo(this.map);
 			
+
 			if(location.search.indexOf('area=')>0){
 				var qs = location.search.replace(/^\?/,"");
 				var bits = qs.split("&");
@@ -710,7 +723,7 @@ OI.ready(function(){
 				}
 				evs[event].push({'fn':fn,'data':data});
 			}else if(event=="blur"){
-				console.log('blur');
+				console.logger.log('blur');
 			}else console.warn('No event of type '+event);
 			return this;
 		};

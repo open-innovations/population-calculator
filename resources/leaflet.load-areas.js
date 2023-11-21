@@ -160,7 +160,7 @@ L.Control.loadArea = L.Control.extend({
 			if(txt && txt.length>1){
 				OI.SearchDB.search(txt,function(a){
 					_obj.areaSearch.addItems(a.items);
-					console.log('There are '+_obj.areaSearch.listItems().length+' items');
+					OI.logger('Leaflet.load-areas').log('INFO','There are '+_obj.areaSearch.listItems().length+' items');
 					_obj.areaSearch.update();
 				});
 			}
@@ -182,11 +182,11 @@ L.control.loadarea = function(opts){ return new L.Control.loadArea(opts); };
 				if(!opts) opts = {};
 
 				if(!url){
-					console.error('No URL provided.');
+					OI.logger('Leaflet.load-areas').log('ERROR','No URL provided.');
 					return this;
 				}
 				if(typeof cb!=="function"){
-					console.error('No callback function provided so not bothering.');
+					OI.logger('Leaflet.load-areas').log('ERROR','No callback function provided so not bothering.');
 					return this;
 				}
 
@@ -212,13 +212,13 @@ L.control.loadarea = function(opts){ return new L.Control.loadArea(opts); };
 						var ok = false;
 						if(txt.length >= elength-1 && txt.length <= elength+1) ok = true;
 						if(typeof opts.start==="number" && typeof opts.end==="number" && !ok){
-							console.error('Getting '+url+' expected length is '+elength+' but got '+txt.length,ok);
+							OI.logger('Leaflet.load-areas').log('ERROR','Getting '+url+' expected length is '+elength+' but got '+txt.length,ok);
 							throw new Error('Wrong length returned.');
 						}
 						cb.call(this,txt,{'url':url});
 					})
 					.catch(error => {
-						console.error('Failed to extract range so asking for entire response.',error);
+						OI.logger('Leaflet.load-areas').log('ERROR','Failed to extract range so asking for entire response.',error);
 						fetch(url).then(response => { return response.text(); })
 						.then(txt => {
 							full[url] = txt;
@@ -276,7 +276,7 @@ L.control.loadarea = function(opts){ return new L.Control.loadArea(opts); };
 					for(d = 0; d < toload.length; d++){
 						name = toload[d].name;
 						found = toload[d].found;
-						console.log('Get '+dbs[name].full+' ('+dbs[name].data[found].start+'-'+dbs[name].data[found].end+') '+(dbs[name].data[found].end-dbs[name].data[found].start)+' bytes');
+						OI.logger('Leaflet.load-areas').log('INFO','Get '+dbs[name].full+' ('+dbs[name].data[found].start+'-'+dbs[name].data[found].end+') '+(dbs[name].data[found].end-dbs[name].data[found].start)+' bytes');
 						OI.fetch.get(dbs[name].full,function(txt,attr){
 							var rows,cols,r;
 							dbs[name].data[found].rows = txt.split(/\n/);
@@ -302,5 +302,31 @@ L.control.loadarea = function(opts){ return new L.Control.loadArea(opts); };
 		OI.SearchDB = SearchDB();
 	}
 	root.OI = OI||root.OI||{};
+
+	if(!root.OI.logger){
+		// Version 1.2
+		root.OI.logger = function(title){
+			this.title = title||"OI Logger";
+			this.logging = (location.search.indexOf('debug=true') >= 0);
+			this.log = function(){
+				var a,ext;
+				if(this.logging || arguments[0]=="ERROR" || arguments[0]=="WARNING"){
+					a = Array.prototype.slice.call(arguments, 0);
+					// Build basic result
+					ext = ['%c'+this.title+'%c: '+a[1],'font-weight:bold;',''];
+					// If there are extra parameters passed we add them
+					if(a.length > 2) ext = ext.concat(a.splice(2));
+					if(console && typeof console.log==="function"){
+						if(arguments[0] == "ERROR") console.error.apply(null,ext);
+						else if(arguments[0] == "WARNING") console.warn.apply(null,ext);
+						else if(arguments[0] == "INFO") console.info.apply(null,ext);
+						else console.log.apply(null,ext);
+					}
+				}
+				return this;
+			};
+			return this;
+		};
+	}
 
 })(window || this);
