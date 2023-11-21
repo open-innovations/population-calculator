@@ -8,8 +8,9 @@ BEGIN {
 	$lib = $basedir."";
 }
 use Data::Dumper;
-use Encode 'encode';
 use utf8;
+binmode STDOUT, 'utf8';
+binmode STDERR, 'utf8';
 
 
 $file = $ARGV[0]||$basedir."../../geography-bits-osm/good.tsv";
@@ -65,9 +66,9 @@ $e = 0;
 $meta = "";
 
 for($i = 0; $i < @fulllist; $i++){
-	$s = length(encode('UTF-8',$txt));
+	$s = length($txt);
 	$txt .= "$fulllist[$i]->{'name'}\t$fulllist[$i]->{'rest'}\n";
-	$s2 = length(encode('UTF-8',$txt));
+	$s2 = length($txt);
 	print "$fulllist[$i]->{'name'} = $s\n";
 	if(!$prev){ $prev = $fulllist[$i]->{'frag'}; }
 	if($s > $e+$chunksize && $fulllist[$i]->{'frag'} ne $prev){
@@ -77,10 +78,10 @@ for($i = 0; $i < @fulllist; $i++){
 	}
 }
 
-open(FILE,">:utf8",$basedir."osm_full.db");
+open(FILE,">",$basedir."osm_full.db");
 print FILE $txt;
 close(FILE);
 
-open(FILE,">:utf8",$basedir."osm_meta.db");
+open(FILE,">",$basedir."osm_meta.db");
 print FILE $meta;
 close(FILE);
