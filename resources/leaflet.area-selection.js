@@ -375,7 +375,7 @@
 		}, !enoughPoints && {
 			dashArray: '5, 10'
 		}, {
-			className: 'drawing-area-poligon'
+			className: 'drawing-area-polygon'
 		}));
 		polygon.on(CLICK_EVT, function (ev) {
 			leaflet.DomEvent.stopPropagation(ev);
