@@ -4,7 +4,8 @@
 L.Control.circle = L.Control.extend({        
 	options: {
 		position: 'topleft',
-		circle: false
+		circle: false,
+		value: 5
 	},
 	activate: function(){
 		this._container.classList.add('open');
@@ -21,7 +22,7 @@ L.Control.circle = L.Control.extend({
 		this._circle.removeFrom(this._map);
 		this.options.circle = false;
 		this._inp.style.display = '';
-		this._btn.focus();
+		//this._btn.focus();
 		this._inp.value = "";
 		this._val.style.display = 'none';
 		this._ctl.style.display = 'none';
@@ -63,7 +64,7 @@ L.Control.circle = L.Control.extend({
 		function setCirclePosition(e){ _obj.setCirclePosition(e); }
 
 		this._container = L.DomUtil.create('div', 'leaflet-control leaflet-control-circle');
-		this._container.innerHTML = '<div class="leaflet-bar"><form><button class="leaflet-button"><svg xmlns="http://www.w3.org/2000/svg" overflow="visible" width="16" height="16" fill="currentColor" fill-opacity="0.4" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7"></circle></svg></button><div class="control" style="display:none;"><input class="radius" id="radius" name="radius" value="'+(this.options.value||1)+'" type="range" min="1" max="100" /></div><div class="value" style="display:none;"><span></span>km</div></div></form></div>';
+		this._container.innerHTML = '<div class="leaflet-bar"><form><button class="leaflet-button"><svg xmlns="http://www.w3.org/2000/svg" overflow="visible" width="16" height="16" fill="currentColor" fill-opacity="0.4" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7"></circle></svg></button><div class="control" style="display:none;"><input class="radius" id="radius" name="radius" value="'+(this.options.value)+'" type="range" min="1" max="100" /></div><div class="value" style="display:none;"><span></span>km</div></div></form></div>';
 		this._btn = this._container.querySelector('button');
 		this._inp = this._container.querySelector('input');
 		this._ctl = this._container.querySelector('.control');
@@ -75,7 +76,7 @@ L.Control.circle = L.Control.extend({
 		this._inp.addEventListener('mousedown', function(){ map.dragging.disable(); });
 		this._inp.addEventListener('mouseup', function(){ map.dragging.enable(); });
 		this._inp.addEventListener('input',updateValue);
-		updateValue(1);
+		updateValue(this.options.value);
 
 		this._btn.addEventListener(CLICK_EVT,function(event){
 			event.preventDefault();
