@@ -1,12 +1,7 @@
 /*
 	Circle creator v0.1
 */
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('leaflet')) :
-	typeof define === 'function' && define.amd ? define(['exports', 'leaflet'], factory) :
-	(global = global || self, factory(global.leafletAreaSelection = {}, global.L));
-}(this, (function (exports, leaflet) {
-
+(function(root){
 
 	var CLICK_EVT = leaflet.Browser.mobile ? 'touchend' : 'click';
 	var ev;
@@ -111,5 +106,4 @@
 
 	L.control.circle = function(opts){ return new L.Control.circle(opts); };
 
-
-})));
+})(window || this);

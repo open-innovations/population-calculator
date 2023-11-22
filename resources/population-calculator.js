@@ -12,9 +12,9 @@
 			else document.addEventListener('DOMContentLoaded', fn);
 		};
 	}
-	if(!root.OI.logger){
+	if(!OI.logger){
 		// Version 1.2
-		root.OI.logger = function(title){
+		OI.logger = function(title){
 			this.title = title||"OI Logger";
 			this.logging = (location.search.indexOf('debug=true') >= 0);
 			this.log = function(){
@@ -512,8 +512,9 @@ console.log('Not getting '+file);
 			}).on('activate',function(e){
 				// Remove any existing polygons
 				if(_obj.areaSelection.polygon) _obj.areaSelection.deactivate();
+				// Deactivate the area loading tool
+				_obj.loadarea.deactivate();
 			});
-
 
 			// Add area selection
 			this.areaSelection = new window.leafletAreaSelection.DrawAreaSelection({
@@ -525,7 +526,10 @@ console.log('Not getting '+file);
 					_obj.logger.log('INFO','onPolygonDblClick',a);
 				},
 				'onButtonActivate':function(e){
+					// Deactivate the circle control
 					_obj.circleControl.deactivate();
+					// Deactivate the area loading tool
+					_obj.loadarea.deactivate();
 				}
 			});
 			this.map.addControl(this.areaSelection);
@@ -541,7 +545,10 @@ console.log('Not getting '+file);
 				}
 			});
 			this.loadarea.on('activate',function(e){
+				// Deactivate the circle control
 				_obj.circleControl.deactivate();
+				// Deactivate the area drawing tool
+				if(_obj.areaSelection.polygon) _obj.areaSelection.deactivate();
 			})
 			this.loadarea.addTo(this.map);
 			

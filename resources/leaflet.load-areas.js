@@ -3,12 +3,7 @@
 		* OSM areas: osm_meta.db and osm_full.db
 		* ONS geographies: bits_meta.db and bits_full.db
 */
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('leaflet')) :
-	typeof define === 'function' && define.amd ? define(['exports', 'leaflet'], factory) :
-	(global = global || self, factory(global.leafletAreaSelection = {}, global.L));
-}(this, (function (exports, leaflet) {
-
+(function(root){
 
 	var CLICK_EVT = leaflet.Browser.mobile ? 'touchend' : 'click';
 	var ev;
@@ -20,7 +15,6 @@
 		activate: function(){
 			this._container.classList.add('open');
 			this._inp.style.display = 'block';
-			console.log(this._inp);
 			this._inp.focus();
 			this.fire('activate');
 			
@@ -191,7 +185,7 @@
 	L.control.loadarea = function(opts){ return new L.Control.loadArea(opts); };
 
 
-	var OI = exports.OI || {};
+	var OI = root.OI || {};
 
 	if(!OI.fetch){
 		function FetchExtract(){
@@ -348,6 +342,6 @@
 		};
 	}
 
-	exports.OI = OI||exports.OI||{};
+	root.OI = OI||root.OI||{};
 
-})));
+})(window || this);
