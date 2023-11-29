@@ -143,6 +143,7 @@
 							i = d.length;	// Leave loop
 						}
 					}
+					_obj.message('');
 					_obj.setGeo(lat,lon,city,1);
 					inp.value = city.displayname;
 				}).catch(error => {
