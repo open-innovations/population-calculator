@@ -48,6 +48,7 @@
 		activate: function(){
 			this._container.classList.add('open');
 			this._inp.style.display = 'block';
+			this._inp.value = this.options.value;
 			this._inp.focus();
 			console.log('activate',this._inp);
 			this._val.style.display = 'block';
@@ -109,7 +110,7 @@
 
 			function updateValue(v){
 				if(v.target) v = v.target.value;
-				_obj.setRadius(parseFloat(v));
+				_obj.setRadius(v);
 			}
 			if(typeof ev!=="function") ev = function(e){ _obj.setPosition(e); }
 

@@ -438,6 +438,9 @@
 				_obj.loadarea.deactivate();
 				// Clear any existing results
 				_obj.clearResults();
+			}).on('deactivate',function(e){
+				// Clear any existing results
+				_obj.clearResults();
 			});
 
 			// Add area selection
