@@ -367,7 +367,6 @@
 				var file = "./";
 
 				if(this.circleControl.options.circle){
-
 					return fetch("https://ringpopulationsapi.azurewebsites.net/api/globalringpopulations?latitude="+this.circleControl.options.centre.lat.toFixed(4)+"&longitude="+this.circleControl.options.centre.lng.toFixed(4)+"&distance_km="+this.circleControl.options.radius,{'method':'GET'})
 					.then(response => { return response.json(); })
 					.then(json => {
