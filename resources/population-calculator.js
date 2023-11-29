@@ -173,11 +173,13 @@
 
 		inp.addEventListener('focus',function(e){ e.currentTarget.value = ""; });
 
-		calculate.addEventListener('click',function(e){
-			// Blur the button
-			e.target.blur();
-			_obj.calculate();
-		});
+		if(calculate){
+			calculate.addEventListener('click',function(e){
+				// Blur the button
+				e.target.blur();
+				_obj.calculate();
+			});
+		}
 
 		var loading = {};
 
@@ -251,7 +253,11 @@
 						else if(geojson.type == "Feature" && geojson.geometry.type=="Polygon"){
 							geojson = {'type':'FeatureCollection','features':[geojson]};
 							_obj.setBoundary(geojson);
+						}else if(geojson.type == "Polygon"){
+							geojson = {'type':'FeatureCollection','features':[{'type':'Feature','geometry':geojson}]};
+							_obj.setBoundary(geojson);
 						}
+						_obj.calculate();
 					};
 					source = reader.readAsBinaryString(blob);
 				}
@@ -432,11 +438,11 @@
 			});
 			this.circleControl.addTo(this.map);
 			this.circleControl.on('update',function(e){
-				console.log('update',e.options.circle,_obj.areaSelection.polygon);
 				if(e.options.circle){
 					// Remove any existing polygons
 					if(_obj.areaSelection.polygon) _obj.areaSelection.deactivate();
 				}
+				_obj.calculate();
 			}).on('activate',function(e){
 				// Remove any existing polygons
 				if(_obj.areaSelection.polygon) _obj.areaSelection.deactivate();
