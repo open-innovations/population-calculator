@@ -474,6 +474,12 @@
 					_obj._geojson = null;
 					// Clear any existing results
 					_obj.clearResults();
+				},
+				'onButtonDeactivate':function(e){
+					// Remove any existing GeoJSON
+					_obj._geojson = null;
+					// Clear any existing results
+					_obj.clearResults();
 				}
 			});
 			this.map.addControl(this.areaSelection);
@@ -493,6 +499,11 @@
 				_obj.circleControl.deactivate();
 				// Deactivate the area drawing tool
 				if(_obj.areaSelection.polygon) _obj.areaSelection.deactivate();
+				// Remove any existing GeoJSON
+				_obj._geojson = null;
+				// Clear any existing results
+				_obj.clearResults();
+			}).on('deactivate',function(e){
 				// Remove any existing GeoJSON
 				_obj._geojson = null;
 				// Clear any existing results
