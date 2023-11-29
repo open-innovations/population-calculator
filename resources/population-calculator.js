@@ -347,7 +347,7 @@
 			// Build output
 			var output = '<p>Estimated population within '+(type=='circle' ? 'the circle':'the area')+' in 2025:</p>';
 			output += '<p><span id="populationcounter">'+json[0].people.toLocaleString()+'</span></p>';
-			output += '<p id="publictransportcounter">The circle also contains <span id="busstops">'+json[0].busStops.toLocaleString()+'</span> bus stops, <span id="tramstops">'+json[0].tramStops.toLocaleString()+'</span> tram stops, and <span id="railstops">'+json[0].railStops.toLocaleString()+'</span> metro and train stops.</p>';
+			output += '<p id="publictransportcounter">'+(type=='circle' ? 'The circle':'The area')+' also contains <span id="busstops">'+json[0].busStops.toLocaleString()+'</span> bus stops, <span id="tramstops">'+json[0].tramStops.toLocaleString()+'</span> tram stops, and <span id="railstops">'+json[0].railStops.toLocaleString()+'</span> metro and train stops.</p>';
 			document.getElementById('output').innerHTML = output;
 
 			return this;
