@@ -121,7 +121,7 @@
 
 						return {
 							'code':code,
-							'url':'https://raw.githubusercontent.com/open-innovations/geography-bits-osm/main/data/OSM/'+dir+'/'+cols[2]+'.geojson',
+							'url':'https://raw.githubusercontent.com/open-innovations/geography-bits-osm/main/data/OSM/'+dir+'/'+cols[3]+'.geojson',
 							'name':name,
 							'population':pop,
 							'level':lvl,
