@@ -109,7 +109,7 @@
 			if(typeof ev!=="function") ev = function(e){ _obj.setCirclePosition(e); }
 
 			this._container = L.DomUtil.create('div', 'leaflet-control leaflet-control-circle');
-			this._container.innerHTML = '<div class="leaflet-bar"><form><button class="leaflet-button" title="Create a circle" aria-describedby="circle-panel-help" aria-label="Create a circle"><svg xmlns="http://www.w3.org/2000/svg" overflow="visible" width="16" height="16" fill="currentColor" fill-opacity="0.4" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7"></circle></svg></button><div class="control" style="display:none;"><input class="radius" id="radius" name="radius" value="'+(this.options.value)+'" type="range" min="1" max="100" /></div><div class="value" style="display:none;"><span></span>km</div></div></form></div>';
+			this._container.innerHTML = '<div class="leaflet-bar"><form><button class="leaflet-button" title="Create a circle" aria-describedby="circle-panel-help" aria-label="Create a circle"><svg xmlns="http://www.w3.org/2000/svg" overflow="visible" width="16" height="16" fill="currentColor" fill-opacity="0.4" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7"></circle></svg></button><div class="control" style="display:none;"><input class="radius" id="radius" name="radius" value="'+(this.options.value)+'" type="range" min="'+(this.options.min||1)+'" max="'+(this.options.max||10)+'" /></div><div class="value" style="display:none;"><span></span>km</div></div></form></div>';
 			this._btn = this._container.querySelector('button');
 			this._inp = this._container.querySelector('input');
 			this._ctl = this._container.querySelector('.control');

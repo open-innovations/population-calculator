@@ -340,6 +340,11 @@
 
 			return this;
 		};
+		
+		this.clearResults = function(){
+			document.getElementById('output').innerHTML = '';
+			return this;
+		};
 
 		this.calculate = function(){
 			this.logger.log('INFO','calculate',this.areaSelection.polygon,this.circleControl.options.circle);
@@ -415,7 +420,9 @@
 
 			// Add circle drawer
 			this.circleControl = L.control.circle({
-				'position': 'topleft'
+				'position': 'topleft',
+				'max': 50,
+				'min': 1
 			});
 			this.circleControl.addTo(this.map);
 			this.circleControl.on('update',function(e){
@@ -429,6 +436,8 @@
 				if(_obj.areaSelection.polygon) _obj.areaSelection.deactivate();
 				// Deactivate the area loading tool
 				_obj.loadarea.deactivate();
+				// Clear any existing results
+				_obj.clearResults();
 			});
 
 			// Add area selection
@@ -460,6 +469,8 @@
 					_obj.loadarea.deactivate();
 					// Remove any existing GeoJSON
 					_obj._geojson = null;
+					// Clear any existing results
+					_obj.clearResults();
 				}
 			});
 			this.map.addControl(this.areaSelection);
@@ -481,6 +492,8 @@
 				if(_obj.areaSelection.polygon) _obj.areaSelection.deactivate();
 				// Remove any existing GeoJSON
 				_obj._geojson = null;
+				// Clear any existing results
+				_obj.clearResults();
 			})
 			this.loadarea.addTo(this.map);
 			
