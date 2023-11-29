@@ -421,7 +421,7 @@
 			// Add circle drawer
 			this.circleControl = L.control.circle({
 				'position': 'topleft',
-				'max': 50,
+				'max': 100,
 				'min': 1
 			});
 			this.circleControl.addTo(this.map);
