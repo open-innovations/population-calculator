@@ -228,6 +228,27 @@ button { height: 2em; margin-top: 0; line-height: 1em; border-radius: 4px; }
 .leaflet-control-attribution { font-size: 0.8em; }
 .area-select-marker, .area-select-ghost-marker { border-radius: 100%; }
 
+
+.leaflet-place-name-layer-marker {
+	font-family: Poppins;
+	font-size: 1em;
+	white-space: nowrap;
+}
+.leaflet-place-name-layer-marker > span {
+	-webkit-text-stroke: 0.3em rgba(0,0,0,0.5);
+	paint-order: stroke fill;
+	mix-blend-mode: difference;
+}
+.leaflet-place-name-layer-marker > * {
+	transform: translate3d(-50%,-50%,0);
+	position: absolute;
+	line-height: 1em;
+}
+
+#output { text-align: center; }
+#populationcounter { font-family: Poppins; font-size: 4em; line-height: 1em; }
+#busstops, #tramstops, #railstops { font-family: Poppins; }
+
 footer ul, footer ol { list-style: disc; margin-bottom: 1em; }
 footer ul li, footer ol li { margin-left: 2em; }
 

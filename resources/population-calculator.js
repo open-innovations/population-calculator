@@ -288,6 +288,7 @@
 		this.setBoundary = function(geojson){
 			var coord,i,geo,feature,f,m,polygon;
 
+			this._geojson = geojson;
 			// Cope with different types of GeoJSON (e.g. those from http://polygons.openstreetmap.fr/get_geojson.py?id=118362&params=0 use GeometryCollection rather than FeatureCollection)
 			if(geojson.type == "GeometryCollection"){
 				var features = [];
@@ -325,6 +326,19 @@
 			return this;
 		};
 
+		this.processResults = function(json,type){
+			// Remove message
+			this.message('');
+
+			// Build output
+			var output = '<p>Estimated population within '+(type=='circle' ? 'the circle':'the area')+' in 2025:</p>';
+			output += '<p><span id="populationcounter">'+json[0].people.toLocaleString()+'</span></p>';
+			output += '<p id="publictransportcounter">The circle also contains <span id="busstops">'+json[0].busStops.toLocaleString()+'</span> bus stops, <span id="tramstops">'+json[0].tramStops.toLocaleString()+'</span> tram stops, and <span id="railstops">'+json[0].railStops.toLocaleString()+'</span> metro and train stops.</p>';
+			document.getElementById('output').innerHTML = output;
+
+			return this;
+		};
+
 		this.calculate = function(){
 			this.logger.log('INFO','calculate',this.areaSelection.polygon,this.circleControl.options.circle);
 			if(this.areaSelection.polygon || this.circleControl.options.circle){
@@ -332,140 +346,28 @@
 			
 				this.message('Loading data... please wait<br /><svg version="1.1" width="64" height="64" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><g transform="matrix(.11601 0 0 .11601 -49.537 -39.959)"><path d="m610.92 896.12m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="-0.83333s" repeatCount="indefinite" /></path><path d="m794.82 577.6m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="-0.6666s" repeatCount="indefinite" /></path><path d="m1162.6 577.6m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="-0.5s" repeatCount="indefinite" /></path><path d="m1346.5 896.12m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="-0.3333s" repeatCount="indefinite" /></path><path d="m1162.6 1214.6m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="-0.1666s" repeatCount="indefinite" /></path><path d="m794.82 1214.6m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="0s" repeatCount="indefinite" /></path></g></svg>',{'type':'INFO'});
 				var file = "./";
-console.log('circleControl',this.circleControl.options);
-console.log('Not getting '+file);
 
-				return this;
-				return fetch(file,{'method':'GET'})
-				.then(response => { return response.json(); })
-				.then(json => {
-					var i,n,node,features,feature,r,rways,mpoly,outer,inner,m,w,poly,cpoly;
+				if(this.circleControl.options.circle){
 
-					_obj.message('');
+					return fetch("https://ringpopulationsapi.azurewebsites.net/api/globalringpopulations?latitude="+this.circleControl.options.centre.lat.toFixed(4)+"&longitude="+this.circleControl.options.centre.lng.toFixed(4)+"&distance_km="+this.circleControl.options.radius,{'method':'GET'})
+					.then(response => { return response.json(); })
+					.then(json => {
+						this.processResults(json,'circle');
+					}).catch(error => {
+						this.message('Error getting data',{'type':'ERROR','extra':error});
+					});
 
-					// Update the time stamp
-					_obj.lastupdate = json.osm3s.timestamp_osm_base.replace('T'," ");
-					_obj.map.attributionControl.setPrefix("OSM data last updated: "+(new Date(_obj.lastupdate)).toLocaleString());
+				}else if(this.areaSelection.polygon){
 
-					var ways = [];
-					var nodes = [];
-					var nodelookup = {};
-					var relations = [];
-					for(i = 0; i < json.elements.length; i++){
-						if(json.elements[i].type==="way") ways.push(json.elements[i]);
-						if(json.elements[i].type==="node"){
-							nodes.push(json.elements[i]);
-							nodelookup['node-'+json.elements[i].id] = {'lat':json.elements[i].lat,'lon':json.elements[i].lon};
-						}
-						if(json.elements[i].type==="relation") relations.push(json.elements[i]);
-					}
+					return fetch("https://ringpopulationsapi.azurewebsites.net/api/globalboundarypopulations",{'method':'POST','body': JSON.stringify(this._geojson), 'headers': {"Content-type": "application/json; charset=UTF-8"}})
+					.then(response => { return response.json(); })
+					.then(json => {
+						this.processResults(json,'area');
+					}).catch(error => {
+						this.message('Error getting data',{'type':'ERROR','extra':error});
+					});
 
-					features = [];
-
-					if(this.config[type].nodes){
-						for(i = 0; i < nodes.length; i++){
-							features.push({'type':'Feature','properties':{},'geometry':{'type':'Point','coordinates':[nodes[i].lon, nodes[i].lat]}});
-						}
-					}else{
-
-						for(i = 0; i < ways.length; i++){
-							feature = {'type':'Feature','properties':{},'geometry':{'type':'Polygon','coordinates':[[]]}};
-							
-							if(ways[i].nodes[0]!=ways[i].nodes[ways[i].nodes.length-1]){
-								this.logger.log('WARNING','Way '+i+' does not have the same start and end',ways[i]);
-							}else{
-								for(n = 0; n < ways[i].nodes.length; n++){
-									node = 'node-'+ways[i].nodes[n];
-									if(nodelookup[node] && typeof nodelookup[node].lon==="number") feature.geometry.coordinates[0].push([nodelookup[node].lon, nodelookup[node].lat]);
-									else console.warn('Bad node '+i+' / '+n,nodelookup[node]);
-								}
-								features.push(feature);
-							}
-						}
-
-						// Process relations as potential MultiPolygons
-						// A relation consists of several members - we'll only deal with ways
-						for(r = 0; r < relations.length; r++){
-							feature = {'type':'Feature','properties':{},'geometry':{'type':'MultiPolygon','coordinates':[]}};
-
-							rways = [];
-							mpoly = [[]];
-							outer = [];
-							inner = [];
-							for(m = 0; m < relations[r].members.length; m++){
-								if(relations[r].members[m].type=="way"){
-									for(w = 0; w < ways.length; w++){
-										if(relations[r].members[m].ref == ways[w].id){
-											if(relations[r].members[m].role=="outer"){
-												for(n = 0; n < ways[w].nodes.length; n++){
-													outer.push(ways[w].nodes[n]);
-													mpoly[0].push(ways[w].nodes[n]);
-												}
-											}
-											if(relations[r].members[m].role=="inner"){
-												if(mpoly.length == 1) mpoly.push([]);
-												for(n = 0; n < ways[w].nodes.length; n++){
-													inner.push(ways[w].nodes[n]);
-													mpoly[1].push(ways[w].nodes[n]);
-												}
-											}
-
-										}
-									}
-								}
-							}
-							mpoly = [];
-							// Loop over outer
-							poly = [];
-							for(i = 0; i < outer.length; i++){
-								// Add the node to the polygon
-								poly.push(outer[i]);
-								// If the polygon is more than 2 nodes and the last node joins up with the first node, we start a new polygon
-								if(poly.length > 2 && poly[0]==poly[poly.length-1]){
-									cpoly = [];
-									for(p = 0; p < poly.length; p++){
-										node = 'node-'+poly[p];
-										if(nodelookup[node] && typeof nodelookup[node].lon==="number") cpoly.push([nodelookup[node].lon, nodelookup[node].lat]);
-										else console.warn('Bad node '+p+' / '+n,nodelookup[node]);
-									}
-									if(cpoly.length < 4){
-										this.logger.log('WARNING','poly (outer) has too few nodes to make a polygon',cpoly);
-									}else{
-										mpoly.push([cpoly]);
-									}
-									poly = [];
-								}
-							}
-							var p = 0;
-							poly = [];
-							for(i = 0; i < inner.length; i++){
-								poly.push(inner[i]);
-								if(poly.length > 2 && poly[0]==poly[poly.length-1]){
-									cpoly = [];
-									for(p = 0; p < poly.length; p++){
-										node = 'node-'+poly[p];
-										if(nodelookup[node] && typeof nodelookup[node].lon==="number") cpoly.push([nodelookup[node].lon, nodelookup[node].lat]);
-										else console.warn('Bad node '+p+' / '+n,nodelookup[node]);
-									}
-									if(cpoly.length < 4){
-										this.logger.log('WARNING','poly (inner) has too few nodes to make a polygon',cpoly);
-									}else{
-										mpoly[0].push(cpoly);
-									}
-									poly = [];
-								}
-							}
-
-							feature.geometry.coordinates = mpoly;
-							features.push(feature);
-						}
-					}
-
-					_obj.compute({ "type": "FeatureCollection", "features": features });
-
-				}).catch(error => {
-					this.message('Error getting data',{'type':'ERROR','extra':error});
-				});
+				}
 
 			}else{
 				this.message('No area has been selected on the map. Please use the <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" vector-effect="non-scaling-stroke" class="bi bi-bounding-box" viewBox="0 0 16 16"><path d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z"/></svg> tool to draw an area or <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/></svg> to search for administrative areas.',{'type':'WARNING'});
@@ -483,19 +385,30 @@ console.log('Not getting '+file);
 			this.map.getPane('labels').style.zIndex = 650;
 			this.map.getPane('labels').style.pointerEvents = 'none';
 			// Add tile layers
-			L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}.png', {
+/*
+			L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}.png', {
 				attribution: '',
 				pane: 'labels'
 			}).addTo(this.map);
-			L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-				attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-			}).addTo(this.map);
-			/*
 			L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
 				attribution: 'Tiles: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
 				subdomains: 'abcd',
 				maxZoom: 19
-			}).addTo(this.map);*/
+			}).addTo(this.map);
+*/
+
+			// Satellite imagery
+			L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+				attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+			}).addTo(this.map);
+
+			// Our own, efficient, text-based label layer
+			var labels = L.LayerGroup.placeNameLayer("https://open-innovations.org/projects/leaflet-place-name-layer/tileset/{z}/{x}/{y}.tsv",{
+				zooms: [2,6,8],
+				attribution: 'Labels &copy; <a href="http://www.geonames.org/">GeoNames</a>/<a href="https://open-innovatons.org/">OI</a>',
+				padding: 3
+			}).addTo(this.map);
+
 
 
 			// Add circle drawer
@@ -521,6 +434,18 @@ console.log('Not getting '+file);
 				'position': 'topleft',
 				'onPolygonReady':function(a){
 					_obj.logger.log('INFO','onPolygonReady',a);
+					if(!_obj._geojson){
+						// Need to build the GeoJSON version
+						var feature = {'type':'Feature','properties':{},'geometry':{'type':'Polygon','coordinates':[[]]}};
+						if(_obj.areaSelection.markers.length > 1){
+							for(var i = 0; i < _obj.areaSelection.markers.length; i++){
+								feature.geometry.coordinates[0].push([parseFloat(_obj.areaSelection.markers[i].marker._latlng.lng.toFixed(5)), parseFloat(_obj.areaSelection.markers[i].marker._latlng.lat.toFixed(5))]);
+							}
+							// Complete ring
+							feature.geometry.coordinates[0].push([parseFloat(_obj.areaSelection.markers[0].marker._latlng.lng.toFixed(5)), parseFloat(_obj.areaSelection.markers[0].marker._latlng.lat.toFixed(5))]);
+						}
+						_obj._geojson = {'type':'FeatureCollection','features':[feature]};
+					}
 				},
 				'onPolygonDblClick':function(a){
 					_obj.logger.log('INFO','onPolygonDblClick',a);
@@ -530,6 +455,8 @@ console.log('Not getting '+file);
 					_obj.circleControl.deactivate();
 					// Deactivate the area loading tool
 					_obj.loadarea.deactivate();
+					// Remove any existing GeoJSON
+					_obj._geojson = null;
 				}
 			});
 			this.map.addControl(this.areaSelection);
@@ -549,6 +476,8 @@ console.log('Not getting '+file);
 				_obj.circleControl.deactivate();
 				// Deactivate the area drawing tool
 				if(_obj.areaSelection.polygon) _obj.areaSelection.deactivate();
+				// Remove any existing GeoJSON
+				_obj._geojson = null;
 			})
 			this.loadarea.addTo(this.map);
 			
