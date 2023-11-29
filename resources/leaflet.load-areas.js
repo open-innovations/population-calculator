@@ -114,7 +114,7 @@
 					// e.g. Leeds	City and Borough of Leeds, England	118362	8	455123	53.79648	-1.54785
 					if(cols.length==8){
 						dir = Math.floor(parseInt(cols[3])/1e5)*100000;
-						name = cols[0]+(cols[1] ? ", "+cols[1] : "")+(cols[2] ? ", "+(cclookup[cols[2]]||cols[2]) : "");
+						name = cols[0]+(cols[1] && cols[1].indexOf(cols[0])!=0 ? ", "+cols[1] : "")+(cols[2] ? ", "+(cclookup[cols[2]]||cols[2]) : "");
 						code = cols[3];
 						pop = parseInt(cols[5]);
 						lvl = parseInt(cols[4]);
