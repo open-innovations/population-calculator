@@ -64,7 +64,7 @@
 				bestzoom = options.zooms[z];
 			}
 		}
-		if(typeof bestzoom==="undefined") bestzoom = zoom;
+		if(typeof bestzoom==="undefined") return [];
 
 		// Limit latitude/longitude range
 		latlim = 89.99;
