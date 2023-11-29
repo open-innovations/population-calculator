@@ -340,6 +340,14 @@
 			return this;
 		};
 
+		this.showButton = function(){
+			if(calculate) calculate.style.display = '';
+		};
+
+		this.hideButton = function(){
+			if(calculate) calculate.style.display = 'none';
+		};
+
 		this.processResults = function(json,type){
 			// Remove message
 			this.message('');
@@ -350,11 +358,13 @@
 			output += '<p id="publictransportcounter">'+(type=='circle' ? 'The circle':'The area')+' also contains <span id="busstops">'+json[0].busStops.toLocaleString()+'</span> bus stops, <span id="tramstops">'+json[0].tramStops.toLocaleString()+'</span> tram stops, and <span id="railstops">'+json[0].railStops.toLocaleString()+'</span> metro and train stops.</p>';
 			document.getElementById('output').innerHTML = output;
 
+			this.hideButton();
 			return this;
 		};
 		
 		this.clearResults = function(){
 			document.getElementById('output').innerHTML = '';
+			_obj.hideButton();
 			return this;
 		};
 
@@ -438,6 +448,7 @@
 			this.circleControl.addTo(this.map);
 			this.circleControl.on('update',function(e){
 				_obj.clearResults();
+				_obj.showButton();
 				if(e.options.circle){
 					// Remove any existing polygons
 					if(_obj.areaSelection.polygon) _obj.areaSelection.deactivate();
@@ -457,13 +468,13 @@
 			});
 
 
-
 			// Add area selection
 			this.areaSelection = new window.leafletAreaSelection.DrawAreaSelection({
 				'position': 'topleft',
 				'onPolygonReady':function(a){
 					_obj.logger.log('INFO','onPolygonReady',a);
 					_obj.clearResults();
+					_obj.showButton();
 					if(!_obj._geojson){
 						// Need to build the GeoJSON version
 						var feature = {'type':'Feature','properties':{},'geometry':{'type':'Polygon','coordinates':[[]]}};
