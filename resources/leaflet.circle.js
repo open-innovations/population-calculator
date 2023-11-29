@@ -84,6 +84,7 @@
 			if(typeof v==="string") v = parseFloat(v);
 			v = Math.min(v,this.options.max||10);
 			v = Math.max(v,this.options.min||1);
+			this._inp.value = v;
 			this._val.querySelector('span').innerHTML = v;
 			this.options.radius = v;
 			this._circle.setRadius(1000*this.options.radius);
