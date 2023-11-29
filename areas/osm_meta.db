@@ -1,601 +1,627 @@
-'ajlun	abenojar	0	10120
-abenojar	acevedo	10035	20112
-acevedo	addison	20059	30161
-addison	agnana calabra	30094	40234
-agnana calabra	ahun	40151	50216
-ahun	ajuterique	50154	60273
-ajuterique	alba de tormes	60218	70334
-alba de tormes	alblasserdam	70246	80362
-alblasserdam	aldbourne	80280	90374
-aldbourne	alfambra	90312	100421
-alfambra	alitagtag	100354	110490
-alitagtag	almenara	110416	120537
-almenara	altafulla	120468	130543
-altafulla	altotonga	130469	140567
-altotonga	ambleston	140503	150603
-ambleston	anacapri	150541	160641
-anacapri	andrezieux-boutheon	160586	170729
-andrezieux-boutheon	annet-sur-marne	170651	180729
-annet-sur-marne	anzin	180652	190759
-anzin	aracatuba	190700	200788
-aracatuba	arcata	200721	210833
-arcata	arevalo	210764	220903
-arevalo	armbouts-cappel	220826	230931
-armbouts-cappel	arroyo de las fraguas	230862	241023
-arroyo de las fraguas	ascheberg	240927	251022
-ascheberg	assai	250931	261059
-assai	atlahuilco	261005	271100
-atlahuilco	auce	271036	281146
-auce	austral	281088	291162
-austral	avolasca	291093	301168
-avolasca	azutan	301097	311196
-azutan	bad elster	311121	321187
-bad elster	bad wiessee	321139	331242
-bad wiessee	baguer-pican	331176	341298
-baguer-pican	baksan	341228	351344
-baksan	ballina	351274	361396
-ballina	bamberg	361332	371455
-bamberg	bantul	371391	381484
-bantul	barcelona	381432	391534
-barcelona	barni	391457	401543
-barni	bartlett	401481	411591
-bartlett	batalha	411524	421641
-batalha	bay view	421583	431686
-bay view	beaucourt	431609	441718
-beaucourt	beclean	441631	451699
-beclean	bejsce	451636	461770
-bejsce	bellagio	461697	471833
-bellagio	belmont-sur-rance	471767	481872
-belmont-sur-rance	benesov nad ploucnici	481807	491935
-benesov nad ploucnici	berbegal	491856	501997
-berbegal	berkheim	501930	512080
-berkheim	berthoud	512002	522103
-berthoud	betws	522036	532125
-betws	bialobrzegi	532055	542161
-bialobrzegi	big beaver	542087	552159
-big beaver	bindki	552088	562184
-bindki	bishnupur	562119	572187
-bishnupur	blagdon	572123	582214
-blagdon	blinisht	582149	592207
-blinisht	boca do acre	592169	602282
-boca do acre	bohoyo	602213	612352
-bohoyo	bolsena	612277	622355
-bolsena	bonnyrigg	622289	632397
-bonnyrigg	borgo san siro	632326	642404
-borgo san siro	bosingen	642332	652418
-bosingen	bourg-saint-andeol	652347	662472
-bourg-saint-andeol	boynton beach	662393	672489
-boynton beach	brandsen	672415	682520
-brandsen	bree	682446	692570
-bree	breval	692506	702625
-breval	brighton	702565	712637
-brighton	broek op langedijk	712571	722692
-broek op langedijk	bruceton	722612	732680
-bruceton	brzeznica	732613	742730
-brzeznica	budrio	742656	752732
-budrio	buitenpost	752671	762789
-buitenpost	burbach	762712	772854
-burbach	burntisland	772765	782892
-burntisland	butler	782831	792947
-butler	cabannes	792881	803035
-cabannes	cadca	802952	813064
-cadca	cajuru	812997	823116
-cajuru	calitri	823056	833195
-calitri	camaqua	833125	843258
-camaqua	camoganti	843188	853293
-camoganti	campodoro	853221	863318
-campodoro	cande	863250	873383
-cande	canoinhas	873312	883430
-canoinhas	capestang	883363	893489
-capestang	caratinga	893431	903503
-caratinga	carichi	903435	913532
-carichi	carolei	913471	923567
-carolei	cartelle	923498	933632
-cartelle	casas de don antonio	933560	943673
-casas de don antonio	cassel	943587	953654
-cassel	castell de cabres	953594	963673
-castell de cabres	castelnuovo di val di cecina	963595	973730
-castelnuovo di val di cecina	castle rock	973645	983779
-castle rock	catalao	983708	993771
-catalao	cavignac	993714	1003818
-cavignac	cekerek	1003749	1013816
-cekerek	central city	1013768	1023887
-central city	cernozice	1023817	1033912
-cernozice	cesky krumlov	1033828	1043954
-cesky krumlov	challuy	1043871	1054002
-challuy	chang'an	1053932	1064063
-chang'an	charlestown	1064007	1074162
-charlestown	chatel-saint-denis	1074077	1084189
-chatel-saint-denis	chella	1084112	1094196
-chella	chessy	1094126	1104216
-chessy	chicla	1104151	1114249
-chicla	chinderah	1114174	1124254
-chinderah	chocos	1124194	1134302
-chocos	chulilla	1134229	1144313
-chulilla	cieszyn	1144245	1154352
-cieszyn	cisse	1154284	1164355
-cisse	clane	1164292	1174414
-clane	clermont	1174357	1184438
-clermont	coal valley	1184374	1194519
-coal valley	cognac-la-foret	1194446	1204528
-cognac-la-foret	colle umberto	1204449	1214572
-colle umberto	colorno	1214499	1224588
-colorno	comrat	1224515	1234574
-comrat	congresbury	1234525	1244618
-congresbury	coorparoo	1244549	1254642
-coorparoo	cori	1254575	1264640
-cori	correze	1264578	1274650
-correze	costitx	1274586	1284670
-costitx	cours-les-barres	1284600	1294692
-cours-les-barres	crane	1294631	1304741
-crane	crick	1304690	1314779
-crick	cruz	1314714	1324780
-cruz	cueto	1324732	1334790
-cueto	curgies	1334742	1344825
-curgies	czechowice-dziedzice	1344765	1354846
-czechowice-dziedzice	dalain hob	1354768	1364886
-dalain hob	dannstadt-schauernheim	1364814	1374943
-dannstadt-schauernheim	daule	1374874	1384974
-daule	decatur	1384914	1394995
-decatur	delogozda	1394930	1405042
-delogozda	dernice	1404994	1415089
-dernice	deza	1415020	1425094
-deza	dieulefit	1425021	1435106
-dieulefit	dittenheim	1435039	1445180
-dittenheim	doertyol	1445097	1455175
-doertyol	dolyna	1455110	1465216
-dolyna	donjimeno	1465153	1475306
-donjimeno	douglas	1475228	1485301
-douglas	driebruggen	1485236	1495312
-driebruggen	duboistown	1495238	1505355
-duboistown	duncraig	1505282	1515413
-duncraig	dwarahat	1515340	1525471
-dwarahat	east devonport	1525410	1535492
-east devonport	eaton	1535423	1545506
-eaton	edelsfeld	1545444	1555567
-edelsfeld	egglkofen	1555499	1565575
-egglkofen	el astillero	1565518	1575602
-el astillero	el portal	1575523	1585651
-el portal	elias fausto	1585582	1595711
-elias fausto	els poblets	1595639	1605717
-els poblets	emu heights	1605643	1615778
-emu heights	entiat	1615694	1625785
-entiat	ergli	1625719	1635797
-ergli	eschau	1635724	1645861
-eschau	espolla	1645786	1655915
-espolla	etna	1655848	1665973
-etna	evrecy	1665905	1676018
-evrecy	fairfield glade	1675961	1686073
-fairfield glade	fara vicentino	1685996	1696081
-fara vicentino	fayette	1696007	1706104
-fayette	ferentino	1706043	1716179
-ferentino	fiera di primiero	1716109	1726219
-fiera di primiero	fitjar	1726119	1736222
-fitjar	florence	1736168	1746298
-florence	fontaine-les-dijon	1746233	1756379
-fontaine-les-dijon	forino	1756295	1766403
-forino	forza d'agro	1766355	1776425
-forza d'agro	francofonte	1776367	1786498
-francofonte	fredropol	1786425	1796530
-fredropol	frickenhausen	1796458	1806567
-frickenhausen	frydek-mistek	1806476	1816557
-frydek-mistek	fuhlsbuettel	1816477	1826540
-fuhlsbuettel	gada	1826486	1836552
-gada	gallese	1836507	1846656
-gallese	garagoa	1846590	1856673
-garagoa	garrochales	1856616	1866724
-garrochales	gazzuolo	1866647	1876777
-gazzuolo	genay	1876708	1886819
-genay	ger	1886755	1896835
-ger	gheorgheni	1896758	1906868
-gheorgheni	gilserberg	1906791	1916888
-gilserberg	gladstone central	1916819	1926936
-gladstone central	globe	1926861	1936979
-globe	goiatuba	1936920	1946990
-goiatuba	gongju	1946932	1957008
-gongju	gorowo ilaweckie	1956949	1967045
-gorowo ilaweckie	gracay	1966961	1977047
-gracay	grand bank	1976997	1987121
-grand bank	gravenhurst	1987051	1997161
-gravenhurst	greensboro	1997107	2007180
-greensboro	grieskirchen	2007114	2017217
-grieskirchen	gross quenstedt	2017126	2027189
-gross quenstedt	grudziadz	2027127	2037224
-grudziadz	guamal	2037151	2047252
-guamal	gudiyatham	2047194	2057302
-gudiyatham	gulfport	2057237	2067378
-gulfport	guyuk	2067306	2077407
-guyuk	hafenlohr	2077358	2087466
-hafenlohr	hallau	2087387	2097519
-hallau	hampton	2097446	2107545
-hampton	hardwick	2107479	2117606
-hardwick	hartsville	2117532	2127658
-hartsville	haussy	2127582	2137698
-haussy	heath	2137640	2147726
-heath	heino	2147664	2157755
-heino	henley beach	2157689	2167785
-henley beach	hermsdorf	2167707	2177788
-hermsdorf	heudeber	2177734	2187867
-heudeber	hiji	2187812	2197889
-hiji	hinte	2197833	2207941
-hinte	hockley heath	2207892	2218027
-hockley heath	holasovice	2217962	2228055
-holasovice	homburg	2227983	2238078
-homburg	horcajo de las torres	2238012	2248130
-horcajo de las torres	horstmar	2248040	2258147
-horstmar	hoyos	2258058	2268189
-hoyos	huandoval	2268118	2278223
-huandoval	huerta del marquesado	2278151	2288260
-huerta del marquesado	hung nguyen	2288171	2298262
-hung nguyen	hysham	2298212	2308320
-hysham	igalo	2308256	2318361
-igalo	illingen	2318311	2328417
-illingen	indian shores	2328340	2338431
-indian shores	inverso pinasca	2338360	2348445
-inverso pinasca	isaccea	2348384	2358453
-isaccea	itacarambi	2358391	2368465
-itacarambi	iturama	2368395	2378518
-iturama	izvoarele	2378454	2388552
-izvoarele	jaguariuna	2388484	2398567
-jaguariuna	janow lubelski	2398500	2408593
-janow lubelski	jatani	2408521	2418623
-jatani	jericho	2418566	2428654
-jericho	jim thorpe	2428587	2438675
-jim thorpe	johannesberg	2438604	2448751
-johannesberg	jouy-en-josas	2448667	2458751
-jouy-en-josas	juquitiba	2458684	2468768
-juquitiba	kakching	2468703	2478782
-kakching	kamez	2478722	2488826
-kamez	kapellen	2488762	2498855
-kapellen	karstaedt	2498784	2508871
-karstaedt	kautokeino	2508816	2518930
-kautokeino	kelso	2518858	2528946
-kelso	kerpen	2528875	2539003
-kerpen	kibiya	2538918	2549018
-kibiya	kingfisher	2548969	2559089
-kingfisher	kirchleerau	2559018	2569152
-kirchleerau	kladruby	2569088	2579191
-kladruby	knittelfeld	2579123	2589229
-knittelfeld	kokubunji	2589150	2599264
-kokubunji	koolkerke	2599198	2609336
-koolkerke	kostice	2609259	2619351
-kostice	kranichfeld	2619281	2629361
-kranichfeld	krompachy	2629307	2639452
-krompachy	kuchl	2639373	2649449
-kuchl	kuroishi	2649377	2659460
-kuroishi	l'isle-adam	2659396	2669527
-l'isle-adam	la chapelle-thouarault	2669459	2679562
-la chapelle-thouarault	la gomera	2679482	2689562
-la gomera	la motte	2689484	2699584
-la motte	la rochette	2699513	2709642
-la rochette	la yesa	2709571	2719705
-la yesa	lage mierde	2719638	2729774
-lage mierde	lake cargelligo	2729688	2739771
-lake cargelligo	lakuntza	2739696	2749767
-lakuntza	landegem	2749700	2759797
-landegem	langport	2759721	2769810
-langport	laranja da terra	2769750	2779889
-laranja da terra	lask	2779805	2789892
-lask	lautenbach	2789823	2799941
-lautenbach	le bourget	2799880	2809961
-le bourget	le petit-quevilly	2809886	2819994
-le petit-quevilly	lebu	2819921	2830012
-lebu	lehrensteinsfeld	2829944	2840054
-lehrensteinsfeld	leni	2839961	2850038
-leni	les contamines-montjoie	2849988	2860121
-les contamines-montjoie	letownia	2860032	2870130
-letownia	lezay	2870059	2880131
-lezay	lidecko	2880062	2890123
-lidecko	limelette	2890065	2900205
-limelette	linne	2900127	2910202
-linne	lithgow	2910139	2920257
-lithgow	llanddeusant	2920191	2930311
-llanddeusant	lochsloy	2930244	2940348
-lochsloy	lomas	2940277	2950356
-lomas	longquan	2950280	2960368
-longquan	los altos	2960309	2970452
-los altos	louisville	2970370	2980498
-louisville	lubenia	2980433	2990523
-lubenia	luebars	2990451	3000505
-luebars	lund	3000459	3010571
-lund	luziania	3010502	3020600
-luziania	macao	3020541	3030595
-macao	maddingley	3030544	3040671
-maddingley	magitang	3040606	3050737
-magitang	mainvilliers	3050663	3060759
-mainvilliers	malaucene	3060694	3070838
-malaucene	malvern	3070761	3080876
-malvern	mane	3080815	3090969
-mane	mansilla mayor	3090881	3100999
-mansilla mayor	marano di napoli	3100917	3111038
-marano di napoli	marennes	3110974	3121072
-marennes	marina di gioiosa ionica	3121005	3131119
-marina di gioiosa ionica	marlow	3131025	3141115
-marlow	martignacco	3141049	3151165
-martignacco	masegoso	3151093	3161235
-masegoso	mater	3161155	3171296
-mater	mawu	3171223	3181276
-mawu	mccordsville	3181228	3191321
-mccordsville	medina de rioseco	3191253	3201426
-medina de rioseco	melano	3201334	3211437
-melano	menangle	3211374	3221484
-menangle	merelim	3221412	3231493
-merelim	mesola	3231447	3241543
-mesola	mezel	3241469	3251564
-mezel	middleton	3251494	3261603
-middleton	mihalyi	3261547	3271637
-mihalyi	millington	3271579	3281710
-millington	mingtong	3281642	3291733
-mingtong	miroslav	3291680	3301777
-miroslav	mnichovice	3301708	3311806
-mnichovice	mogliano veneto	3311727	3321846
-mogliano veneto	mollina	3321770	3331887
-mollina	moneymore	3331817	3341907
-moneymore	mont-saint-aignan	3341835	3351965
-mont-saint-aignan	montcornet	3351891	3361965
-montcornet	montefalcone di val fortore	3361901	3372069
-montefalcone di val fortore	monterosso almo	3371979	3382118
-monterosso almo	montizon	3382057	3392137
-montizon	moonachie	3392068	3402161
-moonachie	morbecque	3402093	3412190
-morbecque	morphettville	3412128	3422248
-morphettville	mostys'ka	3422176	3432247
-mostys'ka	mount lawley	3432193	3442326
-mount lawley	movileni	3442251	3452361
-movileni	muenzenberg	3452302	3462450
-muenzenberg	munkkiniemi	3462375	3472466
-munkkiniemi	murrieta	3472403	3482493
-murrieta	naaldwijk	3482419	3492533
-naaldwijk	nalbach	3492457	3502534
-nalbach	naranjo	3502486	3512550
-naranjo	naumburg	3512490	3522617
-naumburg	nazar	3522547	3532642
-nazar	nelly bay	3532577	3542693
-nelly bay	neubrunn	3542625	3552765
-neubrunn	neusitz	3552685	3562769
-neusitz	new glarus	3562690	3572805
-new glarus	newhaven	3572738	3582850
-newhaven	nicosia	3582787	3592872
-nicosia	nienstadt	3592820	3602883
-nienstadt	nisia floresta	3602830	3612949
-nisia floresta	noisy-sur-ecole	3612865	3622957
-noisy-sur-ecole	north beach	3622882	3633009
-north beach	north strathfield	3632934	3643068
-north strathfield	notre-dame-de-monts	3642988	3653107
-notre-dame-de-monts	noves	3653035	3663183
-noves	nozdrzec	3663103	3673192
-nozdrzec	nyasvizh	3673119	3683183
-nyasvizh	oatlands	3683137	3693235
-oatlands	oberschneiding	3693164	3703252
-oberschneiding	ocros	3703185	3713270
-ocros	oglesby	3713217	3723329
-oglesby	old tappan	3723264	3733340
-old tappan	olmedo de camaces	3733271	3743432
-olmedo de camaces	ongoy	3743343	3753447
-ongoy	oppurg	3753387	3763478
-oppurg	origgio	3763429	3773540
-origgio	ortakoy	3773473	3783551
-ortakoy	osornillo	3783502	3793591
-osornillo	otaki	3793511	3803611
-otaki	ouderkerk aan de amstel	3803555	3813677
-ouderkerk aan de amstel	oxford	3813584	3823678
-oxford	paderne	3823617	3833735
-paderne	palacios de la sierra	3833670	3843843
-palacios de la sierra	palmarejo	3843752	3853846
-palmarejo	pampliega	3853779	3863866
-pampliega	paphos	3863787	3873893
-paphos	parelhas	3873847	3883926
-parelhas	partizanske	3883855	3893965
-partizanske	patrington	3893884	3904006
-patrington	peabody	3903930	3914022
-peabody	pegs creek	3913961	3924093
-pegs creek	pendencias	3924020	3934097
-pendencias	pereira barreto	3934025	3944105
-pereira barreto	pervomayskoye	3944027	3954118
-pervomayskoye	petrovec	3954048	3964159
-petrovec	phulbani	3964111	3974201
-phulbani	piedras albas	3974140	3984271
-piedras albas	pikeville	3984192	3994310
-pikeville	pineville	3994242	4004325
-pineville	pire-sur-seiche	4004259	4014357
-pire-sur-seiche	plainedge	4014287	4024375
-plainedge	plesio	4024309	4034402
-plesio	plumpton	4034339	4044439
-plumpton	poggio bustone	4044369	4054457
-poggio bustone	poljcane	4054388	4064494
-poljcane	ponnur	4064444	4074533
-ponnur	pontoise	4074469	4084569
-pontoise	port douglas	4084509	4094630
-port douglas	portmarnock	4094559	4104661
-portmarnock	potosi	4104593	4114709
-potosi	pozuelo del paramo	4114653	4124817
-pozuelo del paramo	precieux	4124731	4134825
-precieux	pribylina	4134758	4144903
-pribylina	propria	4144822	4154914
-propria	pucheng	4154854	4164948
-pucheng	puerto plata	4164893	4175006
-puerto plata	puos d'alpago	4174946	4185029
-puos d'alpago	qiaozhuang	4184953	4195019
-qiaozhuang	quellendorf	4194955	4205088
-quellendorf	quintanilla de la mata	4205030	4215149
-quintanilla de la mata	radevormwald	4215057	4225170
-radevormwald	rajec	4225079	4235152
-rajec	randolph	4235086	4245177
-randolph	rattenberg	4245107	4255218
-rattenberg	recke	4255153	4265278
-recke	reguengos de monsaraz	4265191	4275347
-reguengos de monsaraz	remsen	4275264	4285342
-remsen	reutlingen	4285281	4295398
-reutlingen	ribbesbuttel	4295318	4305419
-ribbesbuttel	ridlington	4305361	4315454
-ridlington	ringwood	4315386	4325454
-ringwood	riotorto	4325390	4335485
-riotorto	riviere	4335419	4345521
-riviere	roccalumera	4345455	4355548
-roccalumera	rocquencourt	4355490	4365593
-rocquencourt	roiffieux	4365527	4375640
-roiffieux	ronco scrivia	4375570	4385658
-ronco scrivia	rosenberg	4385586	4395731
-rosenberg	rothlein	4395645	4405773
-rothlein	royat	4405694	4415825
-royat	ruebeland	4415755	4425847
-ruebeland	rush springs	4425792	4435873
-rush springs	saacy-sur-marne	4435805	4445908
-saacy-sur-marne	sadu	4445833	4455899
-sadu	saint louis	4455843	4465929
-saint louis	saint-benin-d'azy	4465860	4475988
-saint-benin-d'azy	saint-die-des-vosges	4475908	4486036
-saint-die-des-vosges	saint-germain-de-la-grange	4485965	4496054
-saint-germain-de-la-grange	saint-jean-de-vedas	4495973	4506068
-saint-jean-de-vedas	saint-leonard-d'aston	4506000	4516137
-saint-leonard-d'aston	saint-maurice-la-souterraine	4516058	4526198
-saint-maurice-la-souterraine	saint-philibert	4526112	4536259
-saint-philibert	saint-savin	4536193	4546300
-saint-savin	sainte-colombe-en-bruilhois	4546231	4556388
-sainte-colombe-en-bruilhois	saladas	4556295	4566415
-saladas	salinillas de bureba	4566336	4576449
-salinillas de bureba	samakhvalavichy	4576360	4586462
-samakhvalavichy	san antonino castillo velasco	4586409	4596539
-san antonino castillo velasco	san carlos alzatate	4596438	4606588
-san carlos alzatate	san felipe jalapa de diaz	4606497	4616607
-san felipe jalapa de diaz	san giovanni gemini	4616515	4626593
-san giovanni gemini	san jose del fragua	4626525	4636652
-san jose del fragua	san justo	4636574	4646730
-san justo	san martin de trevejo	4646651	4656763
-san martin de trevejo	san miguel peras	4656676	4666784
-san miguel peras	san pedro martir quiechapa	4666709	4676875
-san pedro martir quiechapa	san salvatore telesino	4676781	4686906
-san salvatore telesino	sanctuary point	4686820	4696918
-sanctuary point	sankt leonhard	4696834	4706938
-sankt leonhard	sant just desvern	4706872	4717027
-sant just desvern	santa anita huiloac	4716944	4727093
-santa anita huiloac	santa cruz de bravo	4727022	4737161
-santa cruz de bravo	santa lucia	4737081	4747200
-santa lucia	santa maria xadani	4747128	4757212
-santa maria xadani	santec	4757133	4767210
-santec	santo anastacio	4767152	4777278
-santo anastacio	sanxing	4777197	4787271
-sanxing	sao lourenco da serra	4787219	4797385
-sao lourenco da serra	sarconi	4797298	4807368
-sarconi	sassuolo	4807299	4817389
-sassuolo	savigneux	4817315	4827423
-savigneux	schauenstein	4827357	4837454
-schauenstein	schluesslberg	4837384	4847509
-schluesslberg	schwabach	4847419	4857516
-schwabach	seadrift	4857435	4867565
-seadrift	sees	4867501	4877587
-sees	semalens	4877536	4887626
-semalens	serdivan	4887571	4897619
-serdivan	sessenheim	4897573	4907708
-sessenheim	shadeland	4907646	4917755
-shadeland	shelby	4917687	4927755
-shelby	shiprock	4927694	4937810
-shiprock	sicuani	4937740	4947878
-sicuani	siikainen	4947807	4957897
-siikainen	simpsonville	4957826	4967937
-simpsonville	sint-ulriks-kapelle	4967868	4978005
-sint-ulriks-kapelle	skennars head	4977919	4988009
-skennars head	sluknov	4987936	4998065
-sluknov	socodor	4998000	5008122
-socodor	solofra	5008060	5018179
-solofra	sonson	5018108	5028232
-sonson	sotto il monte giovanni xxiii	5028174	5038284
-sotto il monte giovanni xxiii	south milford	5038194	5048287
-south milford	spanish wells	5048215	5058280
-spanish wells	sprimont	5058219	5068332
-sprimont	st. day	5068264	5078373
-st. day	stans	5078315	5088407
-stans	stavroupoli	5088360	5098484
-stavroupoli	stepanov	5098400	5108485
-stepanov	stokrooie	5108420	5118491
-stokrooie	strathpine	5118422	5128526
-strathpine	sturbridge	5128456	5138549
-sturbridge	sukosd	5138473	5148553
-sukosd	sundhoffen	5148502	5158652
-sundhoffen	susuz	5158591	5168648
-susuz	swidnica	5168606	5178726
-swidnica	szombathely	5178653	5188748
-szombathely	tainan	5188699	5198768
-tainan	tamamura	5198711	5208821
-tamamura	tanjung pinang	5208766	5218884
-tanjung pinang	targu jiu	5218821	5228938
-targu jiu	tauripampa	5228871	5239003
-tauripampa	teichwolframsdorf	5238928	5249002
-teichwolframsdorf	tenares	5248942	5259015
-tenares	teresin	5258948	5269083
-teresin	tettau	5269013	5279123
-tettau	therwil	5279059	5289140
-therwil	three hills	5289066	5299173
-three hills	tignieu	5299119	5309239
-tignieu	tirukkoyilur	5309174	5319244
-tirukkoyilur	toba	5319175	5329283
-toba	tom price	5329231	5339304
-tom price	toraya	5339232	5349373
-toraya	torre-cardela	5349301	5359390
-torre-cardela	torrubia del castillo	5359313	5369416
-torrubia del castillo	townsend	5369325	5379430
-townsend	trazo	5379356	5389477
-trazo	tres lagoas	5389410	5399516
-tres lagoas	trion	5399437	5409525
-trion	tryon	5409461	5419554
-tryon	tuliszkow	5419488	5429604
-tuliszkow	turre	5429531	5439654
-turre	tyrnaevae	5439598	5449709
-tyrnaevae	uhlirske janovice	5449643	5459805
-uhlirske janovice	ungersheim	5459721	5469792
-ungersheim	upper caboolture	5469731	5479811
-upper caboolture	usher	5479735	5489860
-usher	vado ligure	5489793	5499888
-vado ligure	valdenebro	5499818	5509928
-valdenebro	valgrana	5509849	5519937
-valgrana	vallon-pont-d'arc	5519871	5529960
-vallon-pont-d'arc	vapenna	5529882	5539980
-vapenna	vauvert	5539916	5550030
-vauvert	velez rubio	5549975	5560078
-velez rubio	velykyy bychkiv	5560016	5570158
-velykyy bychkiv	vergato	5570081	5580178
-vergato	vescovato	5580116	5590193
-vescovato	vico del gargano	5590122	5600206
-vico del gargano	viggiu	5600131	5610230
-viggiu	vilapicina i la torre llobeta	5610164	5620324
-vilapicina i la torre llobeta	villa lagarina	5620228	5630388
-villa lagarina	villafuerte	5630293	5640388
-villafuerte	villanova	5640303	5650417
-villanova	villar perosa	5650338	5660399
-villar perosa	villaviciosa de cordoba	5660339	5670426
-villaviciosa de cordoba	villetelle	5670340	5680440
-villetelle	vinningen	5680380	5690478
-vinningen	vitry-sur-seine	5690421	5700507
-vitry-sur-seine	voisenon	5700432	5710563
-voisenon	vracov	5710497	5720579
-vracov	waasmunster	5720513	5730646
-waasmunster	walcott	5730567	5740671
-walcott	wallwitz	5740612	5750668
-wallwitz	ward	5750613	5760690
-ward	washington	5760629	5770711
-washington	wauthier-braine	5770641	5780783
-wauthier-braine	weifen	5780699	5790754
-weifen	wellow	5790700	5800828
-wellow	weslaco	5800751	5810815
-weslaco	west milton	5810752	5820854
-west milton	westmead	5820793	5830912
-westmead	white rock	5830840	5840990
-white rock	wiesenburg	5840892	5851022
-wiesenburg	williamston	5850968	5861095
-williamston	windham	5861022	5871114
-windham	winton	5871043	5881133
-winton	wojciechowice	5881064	5891174
-wojciechowice	woodbine	5891096	5901177
-woodbine	worthington	5901113	5911222
-worthington	wynigen	5911155	5921227
-wynigen	xintian	5921164	5931266
-xintian	yangebup	5931213	5941306
-yangebup	yellow springs	5941226	5951294
-yellow springs	young	5951227	5961318
-young	zabrusany	5961252	5971352
-zabrusany	zamch	5971282	5981389
-zamch	zavrc	5981324	5991433
-zavrc	zempoala	5991391	6001490
-zempoala	zidlochovice	6001432	6011576
-zidlochovice	zollikofen	6011497	6021578
-zollikofen	zuitou	6021505	6031601
+'ajlun	abejar	0	10082
+abejar	acebedo	10004	20105
+acebedo	adamstown	20031	30174
+adamstown	agasegyhaza	30100	40173
+agasegyhaza	ahillones	40114	50268
+ahillones	aiton	50193	60322
+aiton	alamo	60255	70333
+alamo	albert park	70264	80369
+albert park	alcoa	80297	90429
+alcoa	alejandria	90363	100478
+alejandria	algonquin	100413	110501
+algonquin	alling	110430	120557
+alling	alotenango	120493	130568
+alotenango	altenriet	130507	140621
+altenriet	alzate brianza	140532	150655
+alzate brianza	amethi	150580	160711
+amethi	anchonga	160643	170758
+anchonga	angern	170681	180766
+angern	anover de tajo	180713	190823
+anover de tajo	apan	190735	200821
+apan	arafo	200765	210917
+arafo	archbald	210824	220961
+archbald	argamasilla de calatrava	220886	231075
+argamasilla de calatrava	armbouts-cappel	230971	241047
+armbouts-cappel	arroyito	240975	251113
+arroyito	asbach-baumenheim	251031	261130
+asbach-baumenheim	aspatria	261062	271179
+aspatria	athies-sous-laon	271117	281247
+athies-sous-laon	aubin	281174	291264
+aubin	auriflama	291206	301312
+auriflama	aveze	301243	311304
+aveze	aytre	311250	321384
+aytre	bacoachi	321306	331421
+bacoachi	bad radkersburg	331358	341499
+bad radkersburg	bage	341403	351488
+bage	baima	351422	361509
+baima	bald hills	361455	371564
+bald hills	ballymoney	371494	381656
+ballymoney	banepa	381567	391658
+banepa	baraga	391581	401679
+baraga	bardonecchia	401613	411732
+bardonecchia	barra de santo antonio	411670	421836
+barra de santo antonio	barwedel	421745	431857
+barwedel	batesville	431800	441938
+batesville	bayarcal	441862	451933
+bayarcal	beaugency	451872	461969
+beaugency	beczarka	461911	472011
+beczarka	bejar	471934	482030
+bejar	bella vista	481947	492092
+bella vista	belmond	492010	502078
+belmond	bene lario	502016	512113
+bene lario	benton	512043	522173
+benton	bergondo	522108	532205
+bergondo	berric	532132	542206
+berric	bethany	542146	552259
+bethany	bezliudivka	552190	562268
+bezliudivka	bielefeld	562212	572381
+bielefeld	bilisht	572288	582402
+bilisht	birkenhead	582338	592450
+birkenhead	biwer	592363	602446
+biwer	blanquillo	602388	612476
+blanquillo	blue bay	612420	622520
+blue bay	bodenwerder	622443	632520
+bodenwerder	boissy-le-chatel	632461	642586
+boissy-le-chatel	bomarzo	642507	652607
+bomarzo	boonville	652538	662675
+boonville	borken	662600	672756
+borken	boston	672665	682780
+boston	bourne	682704	692808
+bourne	bozhurishte	692742	702824
+bozhurishte	brandysek	702756	712911
+brandysek	bredon	712836	722906
+bredon	breuil-le-vert	722839	732966
+breuil-le-vert	briga alta	732896	743011
+briga alta	brodek u prerova	742941	753056
+brodek u prerova	brownfield	752980	763111
+brownfield	brvenica	763044	773145
+brvenica	bucyrus	773091	783201
+bucyrus	bugat	783135	793249
+bugat	bundenbach	793207	803271
+bundenbach	buritis	803211	813332
+buritis	busnes	813264	823341
+busnes	byst	823269	833403
+byst	cabrican	833335	843399
+cabrican	cagnano amiterno	843340	853443
+cagnano amiterno	calceta	853362	863505
+calceta	calpulalpan	863438	873574
+calpulalpan	camblanes	873503	883657
+camblanes	campbell river	883586	893687
+campbell river	campos	893587	903663
+campos	candide	903591	913716
+candide	cantagallo	913647	923771
+cantagallo	capistrano	923706	933818
+capistrano	caraway	933737	943857
+caraway	carignan	943786	953909
+carignan	carol stream	953845	963934
+carol stream	cartagena del chaira	963861	973998
+cartagena del chaira	casargo	973912	984039
+casargo	caspoggio	983972	994076
+caspoggio	castelcucco	994003	1004083
+castelcucco	castelnau-montratier	1004009	1014125
+castelnau-montratier	castillejo-sierra	1014056	1024174
+castillejo-sierra	castronuevo	1024085	1034193
+castronuevo	cavaglia	1034109	1044206
+cavaglia	cedar hill	1044135	1054220
+cedar hill	cenizate	1054147	1064241
+cenizate	cerenzia	1064163	1074246
+cerenzia	cerveno	1074173	1084268
+cerveno	chachapoyas	1084198	1094342
+chachapoyas	champagne-les-marais	1094258	1104398
+champagne-les-marais	chapa de mota	1104318	1114433
+chapa de mota	charqueadas	1114362	1124523
+charqueadas	chatrapur	1124442	1134514
+chatrapur	chenalho	1134452	1144525
+chenalho	chetopa	1144462	1154574
+chetopa	chieri	1154508	1164617
+chieri	chipley	1164560	1174692
+chipley	chodziez	1174621	1184731
+chodziez	chumuch	1184653	1194736
+chumuch	cifteler	1194664	1204738
+cifteler	cison di valmarino	1204683	1214807
+cison di valmarino	clairac	1214726	1224839
+clairac	clemson	1224762	1234891
+clemson	clyde	1234816	1244902
+clyde	coedpoeth	1244830	1254920
+coedpoeth	colima	1254858	1264963
+colima	colon	1264904	1275028
+colon	comerio	1274971	1285106
+comerio	conde-sur-l'escaut	1285036	1295173
+conde-sur-l'escaut	conway springs	1295098	1305170
+conway springs	corby	1305099	1315210
+corby	corno giovine	1315140	1325253
+corno giovine	corupa	1325179	1335268
+corupa	couchey	1335201	1345318
+couchey	cow bay	1345242	1355355
+cow bay	cremenes	1355299	1365424
+cremenes	crocker	1365345	1375441
+crocker	csolnok	1375373	1385436
+csolnok	cuiseaux	1385375	1395530
+cuiseaux	curtea	1395447	1405556
+curtea	czudec	1405496	1415618
+czudec	dalhem	1415543	1425628
+dalhem	danville	1425559	1435636
+danville	dausenau	1435569	1445632
+dausenau	decaturville	1445574	1455690
+decaturville	delmar	1455617	1465694
+delmar	dergaon	1465628	1475730
+dergaon	devon	1475673	1485766
+devon	diesdorf	1485715	1495799
+diesdorf	dippoldiswalde	1495742	1505864
+dippoldiswalde	dobrush	1505806	1515886
+dobrush	dolni pocernice	1515829	1525978
+dolni pocernice	dong hoi	1525899	1535972
+dong hoi	dorum	1535915	1546019
+dorum	dragoslavele	1545967	1556049
+dragoslavele	droue-sur-drouette	1555973	1566063
+droue-sur-drouette	duivendrecht	1565990	1576100
+duivendrecht	dura	1576015	1586147
+dura	dzyarzhynsk	1586084	1596143
+dzyarzhynsk	east liverpool	1596092	1606168
+east liverpool	ebersberg	1606093	1616190
+ebersberg	edgewater	1616123	1626214
+edgewater	eibar	1626140	1636290
+eibar	el canton de san pablo	1636210	1646329
+el canton de san pablo	el real de san vicente	1646240	1656354
+el real de san vicente	elizabeth grove	1656258	1666375
+elizabeth grove	elsenfeld	1666296	1676389
+elsenfeld	emure-ekiti	1676305	1686414
+emure-ekiti	enterprise	1686355	1696437
+enterprise	erezee	1696367	1706449
+erezee	escanaba	1706374	1716456
+escanaba	espinosa	1716388	1726544
+espinosa	etain	1726475	1736543
+etain	evercreech	1736486	1746566
+evercreech	fai della paganella	1746501	1756671
+fai della paganella	falls creek	1756570	1766666
+falls creek	farsund	1766588	1776698
+farsund	felletin	1776642	1786759
+felletin	ferreruela de huerva	1786690	1796810
+ferreruela de huerva	findon	1796730	1806837
+findon	flemington	1806773	1816914
+flemington	flynn	1816839	1826978
+flynn	fontenay-tresigny	1826906	1837046
+fontenay-tresigny	forrestfield	1836964	1847057
+forrestfield	fountain hills	1846976	1857063
+fountain hills	franklin	1856985	1867134
+franklin	freigne	1867061	1877179
+freigne	friedrichsdorf	1877101	1887190
+friedrichsdorf	fuchsstadt	1887107	1897218
+fuchsstadt	fukushima	1897136	1907218
+fukushima	gadzin han	1907149	1917217
+gadzin han	galliate lombardo	1917151	1927261
+galliate lombardo	garachine	1927182	1937336
+garachine	garrett park	1937260	1947410
+garrett park	gaylord	1947332	1957433
+gaylord	gemmano	1957366	1967461
+gemmano	geographe	1967385	1977468
+geographe	gettysburg	1977391	1987513
+gettysburg	gilbert	1987439	1997573
+gilbert	giustenice	1997502	2007603
+giustenice	glenelg east	2007532	2017654
+glenelg east	godeni	2017575	2027652
+godeni	gollheim	2027588	2037669
+gollheim	gordon	2037612	2047699
+gordon	gouaix	2047626	2057747
+gouaix	gragnano trebbiense	2057676	2067805
+gragnano trebbiense	grane	2067715	2077830
+grane	great gransden	2077764	2087887
+great gransden	greenwood	2087812	2097934
+greenwood	grindelwald	2097865	2107994
+grindelwald	grosse pointe farms	2107912	2117997
+grosse pointe farms	grumolo delle abbadesse	2117920	2128025
+grumolo delle abbadesse	guano	2127939	2138060
+guano	guemene-penfao	2137992	2148100
+guemene-penfao	gulnar	2148017	2158080
+gulnar	guzman	2158030	2168123
+guzman	haemeenkyroe	2168058	2178167
+haemeenkyroe	halifax	2178100	2188189
+halifax	hamois	2188121	2198235
+hamois	harburg	2198167	2208228
+harburg	hartford	2208176	2218251
+hartford	hattersheim	2218180	2228326
+hattersheim	hayti	2228244	2238343
+hayti	heidenau	2238276	2248357
+heidenau	hemet	2248306	2258431
+hemet	herepian	2258359	2268421
+herepian	herten	2268361	2278497
+herten	hienghene	2278429	2288516
+hienghene	hillside	2288444	2298514
+hillside	hitiaa	2298450	2308531
+hitiaa	hoetting	2308492	2318621
+hoetting	hollfeld	2318553	2328707
+hollfeld	honfleur	2328638	2338721
+honfleur	horlivka	2338660	2348729
+horlivka	hosszuheteny	2348668	2358800
+hosszuheteny	hradek nad nisou	2358745	2368851
+hradek nad nisou	huanta	2368770	2378843
+huanta	huetamo de nunez	2378771	2388860
+huetamo de nunez	huningue	2388788	2398869
+huningue	hyrynsalmi	2398807	2408913
+hyrynsalmi	iffendic	2408846	2418953
+iffendic	illange	2418884	2429027
+illange	independence	2428966	2439078
+independence	intendente alvear	2439009	2449102
+intendente alvear	irsee	2449010	2459083
+irsee	issiglio	2459027	2469103
+issiglio	itau de minas	2469046	2479159
+itau de minas	ixtenco	2479080	2489189
+ixtenco	jacksonville	2489127	2499229
+jacksonville	jamesburg	2499157	2509313
+jamesburg	jarosov nad nezarkou	2509239	2519390
+jarosov nad nezarkou	jefferson	2519295	2529395
+jefferson	jezdovec	2529327	2539452
+jezdovec	jinping	2539357	2549467
+jinping	jomda	2549405	2559508
+jomda	juchen	2559453	2569538
+juchen	juviles	2569460	2579599
+juviles	kaleen	2579526	2589629
+kaleen	kamjong	2589556	2599660
+kamjong	kaprun	2599602	2609740
+kaprun	kasaragod	2609658	2619753
+kasaragod	kavecany	2619679	2629760
+kavecany	kelvedon	2629692	2639801
+kelvedon	kermit	2639743	2649827
+kermit	khurja	2649761	2659890
+khurja	kincsesbanya	2659818	2669910
+kincsesbanya	kirchenpingarten	2669857	2679956
+kirchenpingarten	kitee	2679879	2689984
+kitee	klokocov	2689921	2700035
+klokocov	koersel	2699959	2710084
+koersel	kongwa	2710013	2720103
+kongwa	kortowo	2720048	2730121
+kortowo	kozen	2730055	2740150
+kozen	kremze	2740083	2750193
+kremze	kryevidh	2750115	2760232
+kryevidh	kumlu	2760167	2770253
+kumlu	kuurne	2770209	2780335
+kuurne	la blanca	2780259	2790394
+la blanca	la croix-valmer	2790339	2800460
+la croix-valmer	la haye-pesnel	2800379	2810467
+la haye-pesnel	la paz	2810401	2820535
+la paz	la serena	2820455	2830563
+la serena	labastidette	2830478	2840573
+labastidette	lago vista	2840502	2850583
+lago vista	lake city	2850516	2860622
+lake city	lalgudi	2860553	2870638
+lalgudi	landehen	2870565	2880699
+landehen	langoiran	2880632	2890752
+langoiran	lapugiu de jos	2890679	2900775
+lapugiu de jos	las tunas	2900691	2910819
+las tunas	laurens	2910761	2920888
+laurens	lazne belohrad	2920828	2930919
+lazne belohrad	le merlan	2930835	2940942
+le merlan	leachville	2940852	2950966
+leachville	lefka	2950891	2960967
+lefka	lemberge	2960910	2971046
+lemberge	leppaevirta	2970967	2981062
+leppaevirta	leshan	2980994	2991076
+leshan	levier	2991011	3001170
+levier	libertyville	3001099	3011216
+libertyville	light street	3011145	3021284
+light street	lincoln	3021207	3031295
+lincoln	lipnik	3031219	3041336
+lipnik	litvinov	3041262	3051337
+litvinov	llanharry	3051269	3061369
+llanharry	lode	3061298	3071371
+lode	lomnice nad popelkou	3071305	3081398
+lomnice nad popelkou	longueuil	3081313	3091438
+longueuil	los cedrales	3091371	3101504
+los cedrales	louny	3101428	3111551
+louny	lubian	3111483	3121576
+lubian	ludwin	3121497	3131600
+ludwin	lunay	3131533	3141671
+lunay	luz	3141611	3151677
+luz	mabalacat city	3151618	3161772
+mabalacat city	macquarie fields	3161682	3171835
+macquarie fields	magdalena	3171737	3181851
+magdalena	maiden	3181776	3191895
+maiden	malacatan	3191822	3201927
+malacatan	malo	3201869	3211939
+malo	manchester	3211872	3222013
+manchester	manjo	3221935	3231996
+manjo	mapastepec	3231949	3242067
+mapastepec	marcham	3241999	3252116
+marcham	maria woerth	3252053	3262151
+maria woerth	markersbach	3262059	3272163
+markersbach	maroubra	3272109	3282182
+maroubra	martins ferry	3282112	3292215
+martins ferry	mason	3292145	3302243
+mason	matisi	3302177	3312271
+matisi	mayfield	3312206	3322335
+mayfield	mcintosh	3322266	3332346
+mcintosh	medlingen	3332274	3342363
+medlingen	melba	3342303	3352382
+melba	menai bridge	3352310	3362450
+menai bridge	mere	3362384	3372494
+mere	mesegar de corneja	3372433	3382551
+mesegar de corneja	mexticacan	3382462	3392555
+mexticacan	middelkerke	3392487	3402613
+middelkerke	mignano monte lungo	3402530	3412684
+mignano monte lungo	millares	3412600	3422699
+millares	minchinhampton	3422628	3432717
+minchinhampton	miranda de azan	3432641	3442751
+miranda de azan	mittelhausbergen	3442660	3452769
+mittelhausbergen	moeckern	3452700	3462804
+moeckern	mokwa	3462746	3472851
+mokwa	monastier di treviso	3472798	3482895
+monastier di treviso	monnickendam	3482813	3492962
+monnickendam	montalto dora	3492881	3502962
+montalto dora	monte san giovanni campano	3502899	3513067
+monte san giovanni campano	montelabbate	3512979	3523113
+montelabbate	monteu roero	3523025	3533131
+monteu roero	montoggio	3533058	3543172
+montoggio	moorslede	3543101	3553229
+moorslede	moreland hills	3553149	3563223
+moreland hills	morrisville	3563151	3573235
+morrisville	motilleja	3573159	3583293
+motilleja	mount martha	3583208	3593346
+mount martha	mowbray	3593264	3603386
+mowbray	muenstertal/schwarzwald	3603319	3613466
+muenstertal/schwarzwald	munhall	3613375	3623515
+munhall	murowana goslina	3623440	3633569
+murowana goslina	myronivka	3633484	3643540
+myronivka	nairobi	3643489	3653586
+nairobi	nanzhou	3653527	3663650
+nanzhou	nasturelu	3663587	3673696
+nasturelu	navas de oro	3673622	3683734
+navas de oro	neeroeteren	3683647	3693769
+neeroeteren	nesmy	3693695	3703790
+nesmy	neuille-pont-pierre	3703725	3713875
+neuille-pont-pierre	nevez	3713800	3723914
+nevez	new richmond	3723855	3733985
+new richmond	newtown	3733907	3743979
+newtown	niederhasli	3743911	3754025
+niederhasli	nieuwrode	3753954	3764065
+nieuwrode	nizza monferrato	3763989	3774118
+nizza monferrato	nooksack	3774041	3784140
+nooksack	north chicago	3784068	3794161
+north chicago	north wilkesboro	3794089	3804211
+north wilkesboro	nousty	3804129	3814228
+nousty	novillars	3814146	3824282
+novillars	ntungamo	3824208	3834322
+ntungamo	nyekladhaza	3834243	3844338
+nyekladhaza	oancea	3844270	3854395
+oancea	oberroeblingen	3854334	3864436
+oberroeblingen	ocongate	3864372	3874462
+ocongate	ofterdingen	3874385	3884506
+ofterdingen	olawa	3884424	3894528
+olawa	olivet	3894458	3904582
+olivet	omoa	3904510	3914607
+omoa	opfingen	3914559	3924669
+opfingen	ordino	3924590	3934670
+ordino	orocovis	3934622	3944736
+orocovis	oseja de sajambre	3944662	3954764
+oseja de sajambre	ostreni i math	3954676	3964807
+ostreni i math	ottensoos	3964735	3974889
+ottensoos	outjo	3974805	3984907
+outjo	ozzero	3984861	3994978
+ozzero	pagarusa	3994900	4005047
+pagarusa	palazuelos de muno	4004977	4015116
+palazuelos de muno	palmetto	4015027	4025148
+palmetto	panchkula	4025081	4035200
+panchkula	paracuellos de la ribera	4035134	4045263
+paracuellos de la ribera	paripiranga	4045175	4055242
+paripiranga	pasaia	4055176	4065272
+pasaia	patti	4065192	4075311
+patti	peach lake	4075256	4085362
+peach lake	pegomas	4085293	4095447
+pegomas	pencin	4095363	4105528
+pencin	perdaxius	4105446	4115563
+perdaxius	pertosa	4115485	4125634
+pertosa	petrie	4125563	4135640
+petrie	philippeville	4135571	4145657
+philippeville	pidbuzh	4145581	4155688
+pidbuzh	pieve del cairo	4155633	4165725
+pieve del cairo	pinczow	4165649	4175785
+pinczow	piotrkow kujawski	4175707	4185815
+piotrkow kujawski	pitt town	4185722	4195829
+pitt town	plattsmouth	4195754	4205882
+plattsmouth	ploty	4205813	4215886
+ploty	poco das trincheiras	4215814	4225952
+poco das trincheiras	point pleasant beach	4225866	4235964
+point pleasant beach	polverigi	4235883	4245989
+polverigi	pont-sur-sambre	4245913	4256033
+pont-sur-sambre	popovaca	4255962	4266052
+popovaca	port orchard	4265979	4276084
+port orchard	porto murtinho	4276007	4286108
+porto murtinho	pottsville	4286022	4296148
+pottsville	prabumulih	4296078	4306212
+prabumulih	predmerice nad labem	4306148	4316310
+predmerice nad labem	priceville	4316212	4326285
+priceville	propria	4326216	4336305
+propria	pucacaca	4336243	4346337
+pucacaca	puerto lopez	4346276	4356362
+puerto lopez	punta de piedras	4356293	4366389
+punta de piedras	pyskowice	4366302	4376382
+pyskowice	quebrada de piedra	4376315	4386463
+quebrada de piedra	quincy-voisins	4386384	4396507
+quincy-voisins	raccuja	4396430	4406495
+raccuja	raglan	4406439	4416545
+raglan	ramonchamp	4416466	4426598
+ramonchamp	raseiniai	4426536	4436604
+raseiniai	rayon	4436541	4446653
+rayon	redlynch	4446597	4456729
+redlynch	reillo	4456664	4466787
+reillo	repcelak	4466711	4476796
+repcelak	rezzato	4476748	4486880
+rezzato	ricany	4486807	4496914
+ricany	riesel	4496836	4506935
+riesel	rio das ostras	4506869	4516999
+rio das ostras	riquewihr	4516916	4527024
+riquewihr	roade	4526961	4537076
+roade	roccavaldina	4537008	4547104
+roccavaldina	rodeiro	4547043	4557143
+rodeiro	roissy-en-brie	4557066	4567184
+roissy-en-brie	roncobello	4567105	4577192
+roncobello	rosemont	4577119	4587253
+rosemont	rothenbergen	4587186	4597272
+rothenbergen	roxby downs	4597191	4607290
+roxby downs	rudna	4607212	4617349
+rudna	ruoti	4617277	4627385
+ruoti	ryki	4627314	4637397
+ryki	sachsenburg	4637336	4647496
+sachsenburg	saint ann	4647402	4657482
+saint ann	saint-antoine	4657407	4667547
+saint-antoine	saint-clement-de-la-place	4667483	4677640
+saint-clement-de-la-place	saint-gaudens	4677547	4687650
+saint-gaudens	saint-hilaire-de-loulay	4687577	4697742
+saint-hilaire-de-loulay	saint-just-chaleyssin	4697660	4707783
+saint-just-chaleyssin	saint-mars-du-desert	4707700	4717868
+saint-mars-du-desert	saint-nicolas-de-la-grave	4717780	4727927
+saint-nicolas-de-la-grave	saint-priest-en-jarez	4727841	4737947
+saint-priest-en-jarez	saint-thegonnec	4737865	4747985
+saint-thegonnec	sainte-marguerite	4747915	4758038
+sainte-marguerite	salbris	4757970	4768082
+salbris	sallent	4768021	4778139
+sallent	sambir	4778065	4788165
+sambir	san antonio	4788111	4798224
+san antonio	san cataldo	4798162	4808270
+san cataldo	san fermo della battaglia	4808189	4818332
+san fermo della battaglia	san giovanni in marignano	4818246	4828391
+san giovanni in marignano	san jose del fragua	4828296	4838402
+san jose del fragua	san juanito	4838321	4848460
+san juanito	san martin de la vega del alberche	4848398	4858562
+san martin de la vega del alberche	san miguel del padron	4858458	4868559
+san miguel del padron	san pedro de uraba	4868492	4878613
+san pedro de uraba	san rocco	4878528	4888636
+san rocco	sana	4888565	4898681
+sana	sankt bartholomae	4898607	4908789
+sankt bartholomae	sant andreu salou	4908698	4918799
+sant andreu salou	sant'eufemia d'aspromonte	4918720	4928836
+sant'eufemia d'aspromonte	santa comba	4928738	4938856
+santa comba	santa familia	4938779	4948917
+santa familia	santa maria de palautordera	4948861	4958995
+santa maria de palautordera	santa rosa xajay	4958900	4969006
+santa rosa xajay	santiago lalopa	4968925	4979055
+santiago lalopa	santo domingo tepuxtepec	4978980	4989107
+santo domingo tepuxtepec	sao goncalo dos campos	4989013	4999147
+sao goncalo dos campos	sao sebastiao	4999057	5009148
+sao sebastiao	sarmenstorf	5009076	5019159
+sarmenstorf	saubrigues	5019088	5029163
+saubrigues	sawtell	5029091	5039199
+sawtell	schenkendoebern	5039123	5049196
+schenkendoebern	schneeberg	5049133	5059208
+schneeberg	schwalmstadt	5059155	5069248
+schwalmstadt	seaholme	5069170	5079284
+seaholme	seez	5079218	5089321
+seez	selzthal	5089255	5099343
+selzthal	serang	5099267	5109356
+serang	serzedelo	5109303	5119432
+serzedelo	sezana	5119370	5129483
+sezana	shebekino	5129434	5139536
+shebekino	shimizu	5139474	5149565
+shimizu	shymkent	5149488	5159588
+shymkent	sierre	5159540	5169615
+sierre	silverwater	5169549	5179629
+silverwater	sint-gillis-waas	5179552	5189678
+sint-gillis-waas	sitarganj	5189590	5199720
+sitarganj	slaughterville	5199644	5209734
+slaughterville	smrzovka	5209657	5219789
+smrzovka	sokolow podlaski	5219705	5229843
+sokolow podlaski	somersham	5229763	5239847
+somersham	soreze	5239784	5249876
+soreze	soure	5249820	5259885
+soure	south tamworth	5259829	5269970
+south tamworth	speicher	5269882	5280018
+speicher	springdale	5279934	5290053
+springdale	stade	5289978	5300077
+stade	stapelburg	5300025	5310110
+stapelburg	steborice	5310051	5320179
+steborice	stephenville	5320105	5330224
+stephenville	stokesley	5330150	5340221
+stokesley	strathalbyn	5340151	5350243
+strathalbyn	studenok	5350165	5360242
+studenok	suhl	5360190	5370313
+suhl	sumner	5370264	5380346
+sumner	suruc	5380278	5390341
+suruc	swainsboro	5390289	5400390
+swainsboro	szczekociny	5400320	5410460
+szczekociny	tafi viejo	5410385	5420562
+tafi viejo	talcahuano	5420477	5430606
+talcahuano	tanah merah	5430524	5440668
+tanah merah	taquaritinga	5440600	5450701
+taquaritinga	tartu	5450627	5460722
+tartu	tazlau	5460662	5470756
+tazlau	teliu	5470692	5480808
+teliu	teodoro sampaio	5480746	5490914
+teodoro sampaio	terrace park	5490836	5500932
+terrace park	teya	5500862	5510972
+teya	thiers	5510918	5521018
+thiers	thurgoona	5520931	5531078
+thurgoona	tilaran	5530994	5541083
+tilaran	tisno	5541019	5551129
+tisno	tobia	5551062	5561173
+tobia	tomah	5561103	5571207
+tomah	torano castello	5571141	5581273
+torano castello	torre los negros	5581193	5591281
+torre los negros	torrijos	5591204	5601333
+torrijos	touzim	5601250	5611375
+touzim	traspinedo	5611297	5621444
+traspinedo	trenton	5621357	5631498
+trenton	trigueros	5631434	5641529
+trigueros	troyan	5641455	5651547
+troyan	tuczno	5651480	5661591
+tuczno	turbo	5661518	5671603
+turbo	tvrdosin	5671544	5681629
+tvrdosin	udalguri	5681559	5691639
+udalguri	ulm	5691577	5701687
+ulm	university heights	5701613	5711742
+university heights	ureterp	5711665	5721781
+ureterp	utande	5721708	5731825
+utande	val de san martin	5731742	5741907
+val de san martin	valdevimbre	5741827	5751978
+valdevimbre	vallauris	5751895	5762054
+vallauris	valparaiso	5761967	5772082
+valparaiso	varco sabino	5771999	5782119
+varco sabino	vcelna	5782048	5792133
+vcelna	velika polana	5792053	5802190
+velika polana	venado	5802128	5812211
+venado	vergara	5812143	5822226
+vergara	verwood	5822161	5832231
+verwood	vicencia	5832170	5842267
+vicencia	vieux-charmont	5842201	5852330
+vieux-charmont	vilagarcia de arousa	5852252	5862392
+vilagarcia de arousa	villa elisa	5862301	5872388
+villa elisa	villaescusa	5872318	5882411
+villaescusa	villamarzana	5882327	5892435
+villamarzana	villapiana	5892362	5902517
+villapiana	villaseco de los gamitos	5902442	5912583
+villaseco de los gamitos	villeneuve-le-comte	5912483	5922632
+villeneuve-le-comte	vinadio	5922548	5932627
+vinadio	vischongo	5932559	5942680
+vischongo	vlasotince	5942597	5952725
+vlasotince	vonnas	5952656	5962727
+vonnas	vsenory	5962661	5972755
+vsenory	wadsworth	5972677	5982803
+wadsworth	waldmohr	5982736	5992850
+waldmohr	walzenhausen	5992791	6002934
+walzenhausen	warman	6002845	6012970
+warman	wassamu	6012911	6023013
+wassamu	wawa	6022929	6033039
+wawa	weilburg	6032970	6043063
+weilburg	wels	6042988	6053100
+wels	wesselburen	6053035	6063121
+wesselburen	west milton	6063057	6073136
+west milton	westlake	6073072	6083164
+westlake	white haven	6083097	6093210
+white haven	wieruszow	6093134	6103254
+wieruszow	willebroek	6103171	6113310
+willebroek	winchester	6113235	6123319
+winchester	winston hills	6123248	6133345
+winston hills	wlodawa	6133265	6143343
+wlodawa	wolomin	6143280	6153404
+wolomin	woolavington	6153333	6163410
+woolavington	wumahe	6163343	6173421
+wumahe	xianshuigu	6173356	6183472
+xianshuigu	yagoua	6183396	6193526
+yagoua	yarraville	6193473	6203593
+yarraville	yijing	6203526	6213628
+yijing	yuli	6213567	6223650
+yuli	zagornik	6223575	6233703
+zagornik	zapod	6233628	6243756
+zapod	zdanice	6243695	6253808
+zdanice	zero branco	6253736	6263853
+zero branco	ziesar	6263779	6273863
+ziesar	zonhoven	6273810	6283907
+zonhoven	zumaglia	6283835	6293915
