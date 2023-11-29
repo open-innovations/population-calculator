@@ -101,10 +101,10 @@ for($i = 0; $i < @fulllist; $i++){
 	}
 }
 
-open(FILE,">",$basedir."bits_full.db");
+open(FILE,">",$basedir."bits_full.tsv");
 print FILE $txt;
 close(FILE);
 
-open(FILE,">",$basedir."bits_meta.db");
+open(FILE,">",$basedir."bits_meta.tsv");
 print FILE $meta;
 close(FILE);

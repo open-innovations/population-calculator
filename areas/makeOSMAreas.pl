@@ -78,10 +78,10 @@ for($i = 0; $i < @fulllist; $i++){
 	}
 }
 
-open(FILE,">",$basedir."osm_full.db");
+open(FILE,">",$basedir."osm_full.tsv");
 print FILE $txt;
 close(FILE);
 
-open(FILE,">",$basedir."osm_meta.db");
+open(FILE,">",$basedir."osm_meta.tsv");
 print FILE $meta;
 close(FILE);
