@@ -80,7 +80,13 @@
 
 			this.fire('deactivate');
 		},
-		setCirclePosition: function(e){
+		setRadius: function(v){
+			this._val.querySelector('span').innerHTML = v;
+			this.options.radius = parseFloat(v);
+			this._circle.setRadius(1000*this.options.radius);
+			this.fire('update',this);
+		},
+		setPosition: function(e){
 			if(this._active){
 				if(!this.options.circle){
 					this._circle.addTo(this._map);
@@ -99,14 +105,9 @@
 
 			function updateValue(v){
 				if(v.target) v = v.target.value;
-				_obj._val.querySelector('span').innerHTML = v;
-
-				_obj.options.radius = parseFloat(v);
-
-				_obj._circle.setRadius(1000*_obj.options.radius);
-				_obj.fire('update',_obj);
+				_obj.setRadius(parseFloat(v));
 			}
-			if(typeof ev!=="function") ev = function(e){ _obj.setCirclePosition(e); }
+			if(typeof ev!=="function") ev = function(e){ _obj.setPosition(e); }
 
 			this._container = L.DomUtil.create('div', 'leaflet-control leaflet-control-circle');
 			this._container.innerHTML = '<div class="leaflet-bar"><form><button class="leaflet-button" title="Create a circle" aria-describedby="circle-panel-help" aria-label="Create a circle"><svg xmlns="http://www.w3.org/2000/svg" overflow="visible" width="16" height="16" fill="currentColor" fill-opacity="0.4" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7"></circle></svg></button><div class="control" style="display:none;"><input class="radius" id="radius" name="radius" value="'+(this.options.value)+'" type="range" min="'+(this.options.min||1)+'" max="'+(this.options.max||10)+'" /></div><div class="value" style="display:none;"><span></span>km</div></div></form></div>';

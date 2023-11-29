@@ -498,7 +498,7 @@
 			this.loadarea.addTo(this.map);
 			
 
-			if(location.search.indexOf('area=')>0){
+			if(location.search.indexOf('area=')>=0 || location.search.indexOf('radius=')>=0){
 				var qs = location.search.replace(/^\?/,"");
 				var bits = qs.split("&");
 				qs = {};
@@ -509,6 +509,12 @@
 				if(qs.area){
 					var url = "https://open-innovations.github.io/geography-bits/data/"+qs.area+".geojsonl";
 					this.loadArea(url);
+				}
+				if(qs.radius){
+					this.circleControl.activate();
+					this.circleControl.setPosition({'latlng':{'lat':parseFloat(qs.latitude),'lng':parseFloat(qs.longitude)}});
+					this.circleControl.setRadius(qs.radius);
+					this.calculate();
 				}
 			}
 		};
