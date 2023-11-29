@@ -82,20 +82,21 @@
 		},
 		set: function(opt){
 			if(!opt || !this._active) return this;
-
 			if(opt.radius) this.setRadius(opt.radius);
 			if(typeof opt.latitude==="number" && typeof opt.longitude==="number") this.setPosition({'latlng':{'lat':opt.latitude,'lng':opt.longitude}})
 
 			this.fire('update',this);
 		},
 		setRadius: function(v){
-			if(typeof v==="string") v = parseFloat(v);
-			v = Math.min(v,this.options.max||10);
-			v = Math.max(v,this.options.min||1);
-			this._inp.value = v;
-			this._val.querySelector('span').innerHTML = v;
-			this.options.radius = v;
-			this._circle.setRadius(1000*this.options.radius);
+			if(this._active){
+				if(typeof v==="string") v = parseFloat(v);
+				v = Math.min(v,this.options.max||10);
+				v = Math.max(v,this.options.min||1);
+				this._inp.value = v;
+				this._val.querySelector('span').innerHTML = v;
+				this.options.radius = v;
+				this._circle.setRadius(1000*this.options.radius);
+			}
 		},
 		setPosition: function(e){
 			if(this._active){
@@ -105,7 +106,6 @@
 				}
 				this.options.centre = e.latlng;
 				this._circle.setLatLng(this.options.centre);
-				this._map.fitBounds(this._circle.getBounds());
 			}
 		},
 		onAdd: function(map){
@@ -115,10 +115,9 @@
 
 			function updateValue(v){
 				if(v.target) v = v.target.value;
-				_obj.setRadius(v);
-				_obj.fire('update',this);
+				_obj.set({'radius':v});
 			}
-			if(typeof ev!=="function") ev = function(e){ _obj.setPosition(e); _obj.fire('update',this); }
+			if(typeof ev!=="function") ev = function(e){ _obj.set({'latitude':e.latlng.lat,'longitude':e.latlng.lng}); }
 
 			this._container = L.DomUtil.create('div', 'leaflet-control leaflet-control-circle');
 			this._container.innerHTML = '<div class="leaflet-bar"><form><button class="leaflet-button" title="Create a circle" aria-describedby="circle-panel-help" aria-label="Create a circle"><svg xmlns="http://www.w3.org/2000/svg" overflow="visible" width="16" height="16" fill="currentColor" fill-opacity="0.4" stroke="currentColor" stroke-width="1.5" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7"></circle></svg></button><div class="control" style="display:none;"><input class="radius" id="radius" name="radius" value="'+(this.options.value)+'" type="range" min="'+(this.options.min||1)+'" max="'+(this.options.max||10)+'" /></div><div class="value" style="display:none;"><span></span>km</div></div></form></div>';

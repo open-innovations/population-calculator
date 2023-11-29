@@ -438,11 +438,13 @@
 			});
 			this.circleControl.addTo(this.map);
 			this.circleControl.on('update',function(e){
+				_obj.clearResults();
 				if(e.options.circle){
 					// Remove any existing polygons
 					if(_obj.areaSelection.polygon) _obj.areaSelection.deactivate();
 				}
-				_obj.calculate();
+				// Set bounds
+				_obj.map.fitBounds(_obj.circleControl._circle.getBounds());
 			}).on('activate',function(e){
 				// Remove any existing polygons
 				if(_obj.areaSelection.polygon) _obj.areaSelection.deactivate();
@@ -455,11 +457,14 @@
 				_obj.clearResults();
 			});
 
+
+
 			// Add area selection
 			this.areaSelection = new window.leafletAreaSelection.DrawAreaSelection({
 				'position': 'topleft',
 				'onPolygonReady':function(a){
 					_obj.logger.log('INFO','onPolygonReady',a);
+					_obj.clearResults();
 					if(!_obj._geojson){
 						// Need to build the GeoJSON version
 						var feature = {'type':'Feature','properties':{},'geometry':{'type':'Polygon','coordinates':[[]]}};
@@ -538,6 +543,7 @@
 				}else if(qs.radius){
 					this.circleControl.activate();
 					this.circleControl.set({'latitude':parseFloat(qs.latitude),'longitude':parseFloat(qs.longitude),'radius':qs.radius});
+					this.calculate();
 				}
 			}
 		};
