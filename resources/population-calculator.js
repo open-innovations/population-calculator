@@ -321,6 +321,7 @@
 			.then(response => { return response.json(); })
 			.then(feature => {
 				_obj.setBoundary({'type':'FeatureCollection','features':[feature]});
+				this.calculate();
 			}).catch(error => {
 				_obj.message('Unable to load URL '+url,{'type':'ERROR','extra':{}});
 			});
@@ -446,6 +447,7 @@
 							feature.geometry.coordinates[0].push([parseFloat(_obj.areaSelection.markers[0].marker._latlng.lng.toFixed(5)), parseFloat(_obj.areaSelection.markers[0].marker._latlng.lat.toFixed(5))]);
 						}
 						_obj._geojson = {'type':'FeatureCollection','features':[feature]};
+						_obj.calculate();
 					}
 				},
 				'onPolygonDblClick':function(a){
