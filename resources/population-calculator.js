@@ -405,7 +405,7 @@
 
 			// Our own, efficient, text-based label layer
 			var labels = L.LayerGroup.placeNameLayer("tileset/{z}/{x}/{y}.tsv",{
-				zooms: [2,6,8],
+				zooms: [2,6],
 				attribution: 'Labels &copy; <a href="http://www.geonames.org/">GeoNames</a>/<a href="https://open-innovatons.org/">OI</a>',
 				padding: 3
 			}).addTo(this.map);
