@@ -434,7 +434,7 @@
 			this.circleControl = L.control.circle({
 				'position': 'topleft',
 				'max': 100,
-				'min': 1
+				'min': 3
 			});
 			this.circleControl.addTo(this.map);
 			this.circleControl.on('update',function(e){

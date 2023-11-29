@@ -79,7 +79,7 @@
 			<p>This tool finds the population within polygons or circles. It is based on the original <a href="https://www.tomforth.co.uk/circlepopulations/">Population Around A Point</a> tool by Tom Forth.</p>
 			<p>The data is <a href="https://ghsl.jrc.ec.europa.eu/ghs_pop2022.php">the Global Human Settlement Layer</a> population grid for 2025. This release was known to be less accurate for small areas, especially where there has been rapid change in population.</p>
 			<p>The bus stop, tram stop, and train/metro stop data is from <a href="https://www.openstreetmap.org/">Open Street Map</a> from early 2023 and has errors. Many stops are missing, especially outside of Europe. Stops included rarely used or heritage service stops.</p>
-			<p>The maximum radius is set to 50km, it would get slow above that. I set the minimum radius to 3km because otherwise some city-centre populations are likely to be very wrong and I can't be bothered fielding all the "your amateurish tool gives completely spurious information and you should be ashamed of yourself!" type comments that would generate.</p>
+			<p>The maximum circle radius is set to 100km, it would get slow above that. The minimum radius is set to 3km because otherwise some city-centre populations are likely to be very wrong and Tom can't be bothered fielding all the "your amateurish tool gives completely spurious information and you should be ashamed of yourself!" type comments that would generate.</p>
 			<p>This tool then queries Tom's API. Here's how Tom makes this data:</p>
 			<ol>
 				<li>Convert the GeoTIFF files from the GHSL into populations at points.</li>
