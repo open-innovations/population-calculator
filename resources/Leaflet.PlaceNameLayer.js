@@ -77,7 +77,6 @@
 		min = map.project(bounds.getNorthWest(), bestzoom).divideBy(256).floor();
 		max = map.project(bounds.getSouthEast(), bestzoom).divideBy(256).floor();
 		urls = [];
-		console.log(min,max,bounds);
 
 		for(i = min.x; i <= max.x; i++) {
 			for(j = min.y; j <= max.y; j++) {

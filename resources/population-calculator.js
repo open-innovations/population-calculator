@@ -302,9 +302,15 @@
 
 			coord = feature.geometry.coordinates[0];		
 
+			var ll = {'lat':{'max':-90,'min':90},'lon':{'max':-180,'min':180}};
+			for(var c = 0; c < coord.length; c++){
+				ll.lat.max = Math.max(ll.lat.max,coord[c][1]);
+				ll.lat.min = Math.min(ll.lat.min,coord[c][1]);
+				ll.lon.max = Math.max(ll.lon.max,coord[c][0]);
+				ll.lon.min = Math.min(ll.lon.min,coord[c][0]);
+			}
 			// Zoom to bounds first then draw points (otherwise the pixel positions end up quantised)
-			geo = L.geoJson(feature, {});
-			this.map.fitBounds(geo.getBounds());
+			this.map.fitBounds([[ll.lat.min,ll.lon.min],[ll.lat.max,ll.lon.max]]);
 		
 			this.areaSelection.startPolygon();
 			for(i = 0; i < coord.length; i++){
