@@ -371,7 +371,6 @@
 			this.logger.log('INFO','calculate',this.areaSelection.polygon,this.circleControl.options.circle);
 			if(this.areaSelection.polygon || this.circleControl.options.circle){
 
-			
 				this.message('Loading data... please wait<br /><svg version="1.1" width="64" height="64" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><g transform="matrix(.11601 0 0 .11601 -49.537 -39.959)"><path d="m610.92 896.12m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="-0.83333s" repeatCount="indefinite" /></path><path d="m794.82 577.6m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="-0.6666s" repeatCount="indefinite" /></path><path d="m1162.6 577.6m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="-0.5s" repeatCount="indefinite" /></path><path d="m1346.5 896.12m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="-0.3333s" repeatCount="indefinite" /></path><path d="m1162.6 1214.6m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="-0.1666s" repeatCount="indefinite" /></path><path d="m794.82 1214.6m183.9-106.17-183.9-106.17-183.9 106.17v212.35l183.9 106.17 183.9-106.17z" fill="black"><animate attributeName="opacity" values="1;0;0" keyTimes="0;0.7;1" dur="1s" begin="0s" repeatCount="indefinite" /></path></g></svg>',{'type':'INFO'});
 				var file = "./";
 
@@ -474,19 +473,17 @@
 					_obj.logger.log('INFO','onPolygonReady',a);
 					_obj.clearResults();
 					_obj.showButton();
-					if(!_obj._geojson){
-						// Need to build the GeoJSON version
-						var feature = {'type':'Feature','properties':{},'geometry':{'type':'Polygon','coordinates':[[]]}};
-						if(_obj.areaSelection.markers.length > 1){
-							for(var i = 0; i < _obj.areaSelection.markers.length; i++){
-								feature.geometry.coordinates[0].push([parseFloat(_obj.areaSelection.markers[i].marker._latlng.lng.toFixed(5)), parseFloat(_obj.areaSelection.markers[i].marker._latlng.lat.toFixed(5))]);
-							}
-							// Complete ring
-							feature.geometry.coordinates[0].push([parseFloat(_obj.areaSelection.markers[0].marker._latlng.lng.toFixed(5)), parseFloat(_obj.areaSelection.markers[0].marker._latlng.lat.toFixed(5))]);
+
+					// Need to build the GeoJSON version
+					var feature = {'type':'Feature','properties':{},'geometry':{'type':'Polygon','coordinates':[[]]}};
+					if(_obj.areaSelection.markers.length > 1){
+						for(var i = 0; i < _obj.areaSelection.markers.length; i++){
+							feature.geometry.coordinates[0].push([parseFloat(_obj.areaSelection.markers[i].marker._latlng.lng.toFixed(5)), parseFloat(_obj.areaSelection.markers[i].marker._latlng.lat.toFixed(5))]);
 						}
-						_obj._geojson = {'type':'FeatureCollection','features':[feature]};
-						_obj.calculate();
+						// Complete ring
+						feature.geometry.coordinates[0].push([parseFloat(_obj.areaSelection.markers[0].marker._latlng.lng.toFixed(5)), parseFloat(_obj.areaSelection.markers[0].marker._latlng.lat.toFixed(5))]);
 					}
+					_obj._geojson = {'type':'FeatureCollection','features':[feature]};
 				},
 				'onPolygonDblClick':function(a){
 					_obj.logger.log('INFO','onPolygonDblClick',a);
