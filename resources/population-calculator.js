@@ -351,9 +351,16 @@
 			// Remove message
 			this.message('');
 
+			var area = this.getArea();
+			var readableArea = L.GeometryUtil.readableArea(area, true);
+			var density = json[0].people/(area/1e6);
+			var density_rounded = Math.round(density/10)*10;
+
+
 			// Build output
 			var output = '<p>Estimated population within '+(type=='circle' ? 'the circle':'the area')+' in 2025:</p>';
 			output += '<p><span id="populationcounter">'+json[0].people.toLocaleString()+'</span></p>';
+			output += '<p>This is about '+density_rounded.toLocaleString()+' people/km&sup2;<br/>(using an area of approximately '+(area/1e6).toFixed(1)+'km&sup2 which may include bodies of water)</p>';
 			output += '<p id="publictransportcounter">'+(type=='circle' ? 'The circle':'The area')+' also contains <span id="busstops">'+json[0].busStops.toLocaleString()+'</span> bus stops, <span id="tramstops">'+json[0].tramStops.toLocaleString()+'</span> tram stops, and <span id="railstops">'+json[0].railStops.toLocaleString()+'</span> metro and train stops.</p>';
 			document.getElementById('output').innerHTML = output;
 
@@ -367,6 +374,23 @@
 			return this;
 		};
 
+		this.getArea = function(){
+			var totalArea;
+
+			if(this.circleControl.options.circle){
+				var R_E = 6378137;
+				var r = this.circleControl._circle._mRadius;
+				return 2*Math.PI*Math.pow(R_E,2)*(1 - Math.cos(r/R_E));
+			}else if(this.areaSelection.polygon){
+				var totalArea = 0;
+				for(var p = 0; p < _obj.areaSelection.polygon._latlngs.length; p++){
+					totalArea += L.GeometryUtil.geodesicArea(_obj.areaSelection.polygon._latlngs[p]);
+				}
+				return totalArea;
+			}
+			return 0;
+		};
+
 		this.calculate = function(){
 			this.logger.log('INFO','calculate',this.areaSelection.polygon,this.circleControl.options.circle);
 			if(this.areaSelection.polygon || this.circleControl.options.circle){
@@ -375,6 +399,7 @@
 				var file = "./";
 
 				if(this.circleControl.options.circle){
+
 					return fetch("https://ringpopulationsapi.azurewebsites.net/api/globalringpopulations?latitude="+this.circleControl.options.centre.lat.toFixed(4)+"&longitude="+this.circleControl.options.centre.lng.toFixed(4)+"&distance_km="+this.circleControl.options.radius,{'method':'GET'})
 					.then(response => { return response.json(); })
 					.then(json => {
@@ -430,7 +455,7 @@
 
 			// Our own, efficient, text-based label layer
 			var labels = L.LayerGroup.placeNameLayer("tileset/{z}/{x}/{y}.tsv",{
-				zooms: [2,6],
+				zooms: [2,6,9],
 				attribution: 'Labels &copy; <a href="http://www.geonames.org/">GeoNames</a>/<a href="https://open-innovatons.org/">OI</a>',
 				padding: 3
 			}).addTo(this.map);
@@ -484,6 +509,7 @@
 						feature.geometry.coordinates[0].push([parseFloat(_obj.areaSelection.markers[0].marker._latlng.lng.toFixed(5)), parseFloat(_obj.areaSelection.markers[0].marker._latlng.lat.toFixed(5))]);
 					}
 					_obj._geojson = {'type':'FeatureCollection','features':[feature]};
+
 				},
 				'onPolygonDblClick':function(a){
 					_obj.logger.log('INFO','onPolygonDblClick',a);
