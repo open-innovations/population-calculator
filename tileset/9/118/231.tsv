@@ -1,0 +1,120 @@
+id	name	lat	lon	capital	code	pop
+3522451	Ocotlán de Morelos	16.7915	-96.6745	0	PPLA2	15
+8858131	Vicente Guerrero	16.9331	-96.7014	0	PPL	13
+3801595	San Jacinto Amilpas	17.1019	-96.7623	0	PPL	13
+3515484	Tlacolula de Matamoros	16.9547	-96.4759	0	PPLA2	13
+3514189	Villa de Zaachila	16.9510	-96.7494	0	PPLA2	13
+3529915	Cuilapan de Guerrero	16.9776	-96.7808	0	PPLA2	12
+3520194	El Rosario	17.0427	-96.6921	0	PPL	11
+8858159	Santa Cruz Amilpas	17.0583	-96.6833	0	PPL	10
+3519255	San Francisco Telixtlahuaca	17.2968	-96.9053	0	PPLA2	10
+3514027	Zimatlán de Álvarez	16.8694	-96.7844	0	PPLA2	10
+3518128	San Pablo Huixtepec	16.8195	-96.7813	0	PPLA2	8
+3518117	San Pablo Villa de Mitla	16.9228	-96.3599	0	PPLA2	8
+3515442	Tlalixtac de Cabrera	17.0711	-96.6471	0	PPLA2	8
+3531875	San Lorenzo Cacaotepec	17.1277	-96.8024	0	PPL	7
+3527179	Hacienda Blanca	17.1399	-96.7759	0	PPL	7
+3517937	Villa de Etla	17.2062	-96.7989	0	PPL	7
+3517254	Santa María del Tule	17.0471	-96.6357	0	PPLA2	7
+3516923	Santiago Suchilquitongo	17.2532	-96.8782	0	PPLA2	7
+3520000	San Agustin de las Juntas	17.0121	-96.7118	0	PPLA2	6
+3801621	San Antonino Castillo Velasco	16.8014	-96.6828	0	PPLA2	5
+3519480	San Dionisio Ocotepec	16.8046	-96.3933	0	PPLA2	5
+3518129	San Pablo Huitzo	17.2771	-96.8866	0	PPLA2	5
+8858293	Santiago Etla	17.1525	-96.7897	0	PPL	4
+3801590	San Sebastián Tutla	17.0583	-96.6760	0	PPL	4
+3523745	Magdalena Teitipac	16.9039	-96.5584	0	PPLA2	4
+3519926	San Andrés Huayápam	17.1026	-96.6656	0	PPLA2	4
+3518131	San Pablo Güilá	16.8032	-96.4403	0	PPL	4
+3515933	Teotitlán del Valle	17.0297	-96.5193	0	PPLA2	4
+3514689	Trinidad de Viguera	17.1306	-96.7502	0	PPL	4
+9622411	San Francisco Tutla	17.0709	-96.6681	0	PPL	3
+9621865	Santa Lucía Ocotlán	16.7383	-96.6796	0	PPLA2	3
+9613543	San Bartolo Coyotespec	16.9584	-96.7093	0	PPL	3
+3523611	Reyes Mantecón	16.9072	-96.7270	0	PPL	3
+3519979	San Agustín Etla	17.1865	-96.7666	0	PPL	3
+3519266	San Francisco Lachigoló	17.0162	-96.5995	0	PPLA2	3
+3518732	Animas Trujano	16.9909	-96.7132	0	PPLA2	3
+3518677	San Juan Guelavía	16.9551	-96.5436	0	PPLA2	3
+3518233	San Miguel Tilquiapam	16.7822	-96.5816	0	PPLA2	3
+3518132	San Pablo Etla	17.1440	-96.7481	0	PPL	3
+3517281	Ayoquezco de Aldama	16.6837	-96.8429	0	PPLA2	3
+3516937	Santiago Matatlán	16.8647	-96.3826	0	PPLA2	3
+3516627	Santiago Apostol	16.8038	-96.7205	0	PPLA2	3
+3514270	San Agustín Yatareni	17.0820	-96.6658	0	PPLA2	3
+9626582	San Juan Bautista la Raya	16.9862	-96.7247	0	PPL	2
+8858583	Fraccionamiento Ex-Hacienda Catano	17.2275	-96.8156	0	PPL	2
+8858580	Fraccionamiento Ciudad Yagul	16.9775	-96.4619	0	PPL	2
+8858509	Macuilxóchitl de Artigas Carranza	17.0158	-96.5400	0	PPL	2
+3801635	Santa María Coyotepec	16.9666	-96.7051	0	PPLX	2
+3801610	San Bartolomé Quialana	16.9030	-96.5017	0	PPLA2	2
+3801609	Santa Ana Zegache	16.8371	-96.7295	0	PPLA2	2
+3801447	San Miguel del Valle	17.0208	-96.4173	0	PPL	2
+3762772	Magdalena Apasco	17.2408	-96.8208	0	PPL	2
+3532655	Asunción Ocotlán	16.7619	-96.7214	0	PPLA2	2
+3530662	Ciénega de Zimatlán	16.8934	-96.7676	0	PPLA2	2
+3529778	Villa Díaz Ordaz	16.9958	-96.4323	0	PPLA2	2
+3519666	San Baltazar Chichicapam	16.7615	-96.4897	0	PPLA2	2
+3519000	San José del Progreso	16.6867	-96.6847	0	PPL	2
+3518700	San Juan del Estado	17.2743	-96.7991	0	PPLA2	2
+3517991	San Pedro Ixtlahuaca	17.0636	-96.8184	0	PPL	2
+3517454	Santa Gertrudis	16.7858	-96.8002	0	PPLA2	2
+3516810	Mazaltepec	17.1722	-96.8736	0	PPL	2
+3516095	San Juan Teitipac	16.9280	-96.6062	0	PPLA2	2
+3516093	San Felipe Tejalápam	17.1113	-96.8542	0	PPL	2
+3515488	San Jerónimo Tlacochahuaya	17.0087	-96.5828	0	PPLA2	2
+3515270	Santo Domingo Tomaltepec	17.0612	-96.6228	0	PPLA2	2
+3514292	Yaxe	16.7260	-96.4719	0	PPLA2	2
+8859852	La Cañada	17.0700	-96.7781	0	PPL	1
+8859549	San Francisco Javier	17.0286	-96.7775	0	PPL	1
+8859500	Fraccionamiento Riberas de San Jerónimo	17.1125	-96.7772	0	PPL	1
+8858997	Praxedis de Guerrero	16.7200	-96.6400	0	PPL	1
+8858986	San Isidro Monjas	17.0017	-96.7486	0	PPL	1
+8858857	San Jerónimo Yahuiche	17.1086	-96.7697	0	PPL	1
+8858827	Fraccionamiento Real del Valle	16.9328	-96.7678	0	PPL	1
+8858788	Fraccionamiento San Miguel	17.2128	-96.7869	0	PPL	1
+3801842	San José la Garzona	16.6803	-96.6385	0	PPL	1
+3801837	San Pedro Martir	16.7432	-96.7112	0	PPL	1
+3801829	Valdeflores	16.7659	-96.8243	0	PPL	1
+3801822	San Nicolás Quialana	16.8434	-96.7789	0	PPL	1
+3801596	Guadalupe Etla	17.1727	-96.8102	0	PPL	1
+3801591	Rojas de Cuauhtémoc	17.0059	-96.6192	0	PPLA2	1
+3800765	Santa María Lachixío	16.7269	-97.0189	0	PPL	1
+3532726	San Antonio Arrazola	17.0397	-96.7903	0	PPL	1
+3527353	Guadalupe Hidalgo	17.1495	-96.8111	0	PPL	1
+3523749	Magdalena Ocotlán	16.7086	-96.7101	0	PPL	1
+3521923	Santa Cruz Papalutla	16.9563	-96.5831	0	PPLA2	1
+3520341	Reyes Etla	17.2022	-96.8180	0	PPL	1
+3519924	San Andrés Ixtlahuaca	17.0711	-96.8264	0	PPL	1
+3519903	San Andrés Zautla	17.1870	-96.8642	0	PPL	1
+3519608	San Bernardo Mixtepec	16.8258	-96.8991	0	PPLA2	1
+3519479	San Dionisio Ocotlán	16.7470	-96.6800	0	PPL	1
+3519057	San Jerónimo Taviche	16.7147	-96.5936	0	PPLA2	1
+3518714	San Juan Chilateca	16.8304	-96.6692	0	PPLA2	1
+3518517	San Lucas Quiavini	16.8956	-96.4681	0	PPLA2	1
+3518252	San Miguel Peras	16.9390	-97.0112	0	PPL	1
+3518021	San Pedro Apóstol	16.7370	-96.7247	0	PPLA2	1
+3517961	San Pedro Taviche	16.6386	-96.5369	0	PPLA2	1
+3517859	San Raymundo Jalpam	16.9716	-96.7570	0	PPLA2	1
+3517812	San Sebastián Abasolo	16.9943	-96.5870	0	PPLA2	1
+3517809	San Sebastián Etla	17.1644	-96.7834	0	PPL	1
+3517801	San Sebastian Teitipac	16.9519	-96.6143	0	PPLA2	1
+3517736	Santa Ana del Valle	16.9949	-96.4711	0	PPLA2	1
+3517727	Santa Ana Tlapacoyan	16.7434	-96.8369	0	PPLA2	1
+3517664	Santa Catarina Minas	16.7797	-96.6154	0	PPLA2	1
+3517658	Santa Catarina Quiané	16.8825	-96.7407	0	PPLA2	1
+3517641	Santa Cecilia Jalieza	16.8838	-96.6156	0	PPL	1
+3517535	Santa Cruz Lachixolana	17.2278	-96.8556	0	PPL	1
+3517533	Santa Cruz Mixtepec	16.7928	-96.8807	0	PPLA2	1
+3517165	Santa Martha Chichihualtepec	16.6495	-96.7745	0	PPL	1
+3516848	Santo Domingo Jalieza	16.8685	-96.6292	0	PPL	1
+3516812	Santo Tomás Jalieza	16.8447	-96.6706	0	PPLA2	1
+3516766	San Vicente Lachixío	16.7050	-97.0186	0	PPLA2	1
+3515582	San Martín Tilcajete	16.8601	-96.6949	0	PPLA2	1
+3801820	Santa María Guelacé	17.0012	-96.6035	0	PPLA2	0
+3801626	Santa Inés Yatzeche	16.8066	-96.7572	0	PPLA2	0
+3800692	San Miguel Mixtepec	16.7772	-96.9573	0	PPLA2	0
+3523750	Magdalena Mixtepec	16.8966	-96.9062	0	PPLA2	0
+3518413	San Martín de los Canseco	16.6565	-96.7278	0	PPLA2	0
+3517424	Santa Inés del Monte	16.9239	-96.8624	0	PPLA2	0
+3515086	Trinidad Zaachila	16.9214	-96.7638	0	PPLA2	0
