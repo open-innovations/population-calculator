@@ -203,7 +203,7 @@
 					icon: L.divIcon({
 						iconSize: "auto",
 						className: (cls ? cls+'-':'')+'marker'+' '+(cls ? cls+'-':'')+options.code,
-						html: '<span>' + (label||"") + '</span>'
+						html: '<span style="pointer-events: none;">' + (label||"") + '</span>'
 					})
 				}).on('mousedown',function(e){ e.originalEvent.preventDefault(); e.originalEvent.stopPropagation(); });
 			}
