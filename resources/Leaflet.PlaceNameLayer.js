@@ -7,7 +7,7 @@
 	// attach your plugin to the global 'L' variable
 	if (typeof window !== 'undefined' && window.L) window.LabelLayer = factory(L);
 }(function (L) {
-	var version = '0.1.1';
+	var version = '0.2';
 	var title = 'PlaceNameLayer';
 	var prefix = 'label';
 	var cls = 'leaflet-place-name-layer';
@@ -82,7 +82,7 @@
 			for(j = min.y; j <= max.y; j++) {
 				coords = new L.Point(i, j);
 				coords.z = bestzoom;
-				urls.push(url.replace(/\{x\}/g,coords.x).replace(/\{y\}/g,coords.y).replace(/\{z\}/g,coords.z));
+				if(coords.x >= 0 && coords.y >= 0) urls.push(url.replace(/\{x\}/g,coords.x).replace(/\{y\}/g,coords.y).replace(/\{z\}/g,coords.z));
 			}
 		}
 		return urls;
@@ -335,7 +335,7 @@
 					else this._updateMarkers();
 
 				}.bind(this)).catch(function(error){
-					logger.log('ERROR','Unable to load data from '+url);
+					logger.log('WARNING','Unable to load data from '+url);
 				});
 			}else{
 				if(typeof cb==="function") cb.call(this,url);
